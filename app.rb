@@ -1,10 +1,10 @@
 require 'sinatra'
-#require 'sinatra/activerecord'
-#require 'sinatra/static_assets'
-#require 'sinatra/multi_route'
-#require './config/environments' #database configuration
-#current_dir = Dir.pwd           #models
-#Dir["#{current_dir}/models/*.rb"].each { |file| require file }
+require 'sinatra/activerecord'
+require 'sinatra/static_assets'
+require 'sinatra/multi_route'
+require './config/environments' #database configuration
+current_dir = Dir.pwd           #models
+Dir["#{current_dir}/models/*.rb"].each { |file| require file }
 
 # INDEX
 get '/', '/index' do
