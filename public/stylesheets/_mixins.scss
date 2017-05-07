@@ -1,0 +1,24 @@
+@mixin link_hover($initial-color, $hovered-color) {
+  a {
+    transition: color 0.75s;
+    color: $initial-color;
+    &:hover {
+      color: $hovered-color;
+    }
+  }
+}
+
+@mixin link_hover_bg($initial-color, $hovered-color, $initial-bg-color, $hovered-bg-color) {
+  transition: background-color 0.75s, color 0.75s;
+  color: $initial-color;
+  background-color: $initial-bg-color;
+  &:hover {
+    color: $hovered-color;
+    background-color: $hovered-bg-color;
+  }
+}
+
+@mixin background_gradient($base-color, $other-color, $origin, $destination) {
+  background-image: linear-gradient($origin, $base-color, $other-color);
+  background-image: linear-gradient(to $destination, $base-color, $other-color );
+}

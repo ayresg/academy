@@ -1,0 +1,15 @@
+alchemy	Alchemy	plant_flasks.jpg	ALCH
+artificery	Artificery	lamp_workshop.jpg	ART
+astronomy	Astronomy	aurora.jpeg	ASTR
+biology	Biology	owl_handler.jpg	BIO
+chemistry	Chemistry	glass_handling.jpg	CHEM
+cryptography	Cryptography	investigator_writing.jpg	CRYP
+abst	Generalized Abstract Nonsense	abstract_lights.jpeg	ABST
+history	History	vaulted_library.jpg	HIST
+riddles	Is this the Department of Riddles?	snow_bubble.jpg	RID?
+melodrama	Melodrama	mask_and_rose.jpg	MDRA
+necrobiology	Necrobiology	skull_crypt.jpg	NECB
+planology	Planology	glowing_portal_lady.jpg	PLAN
+labeling	Poor Labeling	r.jpg	RID
+deadlang	Revered Dead Languages	script.jpg	DLAN
+villageidiocy	Village Idiocy	jesters_joking.jpg	VILI

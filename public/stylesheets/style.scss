@@ -1,0 +1,178 @@
+// Colors
+$background-color: rgb(240, 243, 243);
+$light-accent-color: rgb(180, 183, 190);
+$medium-accent-color: rgb(130, 139, 155);
+$bright-dark-accent-color: rgb(98, 28, 52);
+$dark-accent-color: rgb(52, 28, 39);
+$base-font-color: rgb(13, 15, 14);
+// Fonts
+$masthead-font: "IM Fell English",
+serif;
+$cursive-font: italic 2em 'IM Fell English',
+cursive;
+$header-font: "IM Fell English",
+serif;
+$text-font: "Antic",
+sans-serif;
+// Layout variables
+$margin: 0.5em;
+$padding: $margin;
+$tiny-screen-threshold: 300px;
+$medium-screen-threshold: 450px;
+$big-screen-threshold: 700px;
+// Imports
+@import "_mixins";
+@import "_box-sizing";
+@import "_normalize";
+@import "_header--big";
+@import "_header--small";
+//Actual SCSS
+body {
+  // layout
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  min-height: 100vh;
+  margin: 0;
+  // colors
+  background-color: $background-color;
+  // elements and text
+  text-align: justify;
+  text-decoration: none;
+  font-family: $text-font;
+  letter-spacing: 0.025rem;
+  //  word-spacing: 0.35rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $header-font;
+  text-align: left;
+}
+
+main {
+  margin: $margin;
+  padding: $padding;
+  flex-grow: 1;
+}
+
+// List types
+ul,
+ol {
+  padding: 0;
+  li {
+    margin-left: 25px;
+  }
+}
+
+ul li {
+  list-style-type: circle;
+}
+
+ol li {
+  list-style-type: decimal;
+}
+
+// Plain list: list without bullets or special spacing
+.pl li {
+  list-style-type: none;
+  margin-left: 0px;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+// Header and navigation stuff (small)
+.big_header_container {
+  display: none;
+}
+
+.small_header_container {
+  display: flex;
+}
+
+// Header and navigation stuff (big)
+@media (min-width: $medium-screen-threshold) {
+  .big_header_container {
+    display: flex;
+  }
+  .small_header_container {
+    display: none;
+  }
+}
+
+// rounded box item things
+.item_box {
+  display: flex;
+  flex-direction: column;
+  margin: $margin / 2;
+  padding: $padding / 2;
+  li {
+    list-style-type: none;
+  }
+  a {
+    font-size: larger;
+    margin: $margin / 2;
+    padding: $padding / 2 $padding;
+    border-radius: 6px;
+    @include link_hover_bg($background-color, white, $medium-accent-color, $light-accent-color);
+  }
+}
+
+// Footer
+.footer_container {
+  // layout
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  // contents setting
+  justify-content: space-around;
+  font-size: small;
+  text-align: left;
+  background-color: $dark-accent-color;
+  color: $background-color;
+  .footer_item {
+    flex-grow: 0;
+    margin: $margin;
+    padding: $padding;
+  }
+}
+
+// form stuff
+.form {
+  // layout
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  // text
+  text-align: left;
+  .column_list_container {
+    margin: $margin 0;
+    display: flex;
+    flex-direction: column;
+    height: 20vm;
+    ul {
+      margin: 0;
+    }
+  }
+  textarea {
+    padding: $padding;
+    width: 100%;
+  }
+}
+
+// images that are content rather than decoration
+//.image {
+//  background-color: $light-accent-color;
+//  padding: $padding / 2 $padding;
+//  border: 1px solid $bright-dark-accent-color;
+//}

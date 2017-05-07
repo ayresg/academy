@@ -1,0 +1,781 @@
+/* line 1, /Users/gabeeayres/Sites/academy/public/stylesheets/_box-sizing.scss */
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* line 7, /Users/gabeeayres/Sites/academy/public/stylesheets/_box-sizing.scss */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit; }
+
+/*! normalize.css v6.0.0 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+/* line 12, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/* Sections
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+/* line 25, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block; }
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+/* line 39, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+/* line 52, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+figcaption,
+figure,
+main {
+  /* 1 */
+  display: block; }
+
+/**
+ * Add the correct margin in IE 8.
+ */
+/* line 62, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+/* line 71, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */ }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+/* line 82, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+/* line 95, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */ }
+
+/**
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+/* line 105, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */ }
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+/* line 115, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+b,
+strong {
+  font-weight: inherit; }
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+/* line 124, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+b,
+strong {
+  font-weight: bolder; }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+/* line 134, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+/* line 145, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+dfn {
+  font-style: italic; }
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+/* line 153, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+mark {
+  background-color: #ff0;
+  color: #000; }
+
+/**
+ * Add the correct font size in all browsers.
+ */
+/* line 162, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+/* line 171, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+/* line 179, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+sub {
+  bottom: -0.25em; }
+
+/* line 183, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+sup {
+  top: -0.5em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+/* line 194, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+audio,
+video {
+  display: inline-block; }
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+/* line 203, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+/* line 212, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+img {
+  border-style: none; }
+
+/**
+ * Hide the overflow in IE.
+ */
+/* line 220, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * Remove the margin in Firefox and Safari.
+ */
+/* line 231, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0; }
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+/* line 244, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+button,
+input {
+  /* 1 */
+  overflow: visible; }
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+/* line 254, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+/* line 265, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */ }
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+/* line 276, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+/* line 288, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+/* line 302, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */ }
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+/* line 316, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+/* line 325, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+textarea {
+  overflow: auto; }
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+/* line 334, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+/* line 344, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+/* line 354, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */ }
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+/* line 363, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+/* line 373, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+/* line 386, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+details,
+menu {
+  display: block; }
+
+/*
+ * Add the correct display in all browsers.
+ */
+/* line 395, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+summary {
+  display: list-item; }
+
+/* Scripting
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+/* line 406, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+canvas {
+  display: inline-block; }
+
+/**
+ * Add the correct display in IE.
+ */
+/* line 414, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+template {
+  display: none; }
+
+/* Hidden
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10-.
+ */
+/* line 425, /Users/gabeeayres/Sites/academy/public/stylesheets/_normalize.css */
+[hidden] {
+  display: none; }
+
+/* line 8, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--big.scss */
+.big_header_container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100vw;
+  height: 30vh;
+  background-repeat: no-repeat;
+  background-size: cover; }
+  /* line 19, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--big.scss */
+  .big_header_container:before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-image: linear-gradient(rgba(52, 28, 39, 0.8), transparent); }
+  /* line 26, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--big.scss */
+  .big_header_container li {
+    z-index: 3;
+    list-style-type: none;
+    padding: 0.5em;
+    color: inherit; }
+  /* line 32, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--big.scss */
+  .big_header_container .masthead {
+    z-index: 1;
+    width: 30vw;
+    color: #f0f3f3;
+    display: flex;
+    align-items: center; }
+    /* line 39, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--big.scss */
+    .big_header_container .masthead .masthead_logo {
+      margin: 0.5em; }
+  /* line 44, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--big.scss */
+  .big_header_container .masthead_name--big {
+    margin: 0.5em;
+    padding: 0.5em 0; }
+    /* line 48, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--big.scss */
+    .big_header_container .masthead_name--big p {
+      margin: 0;
+      font-family: "IM Fell English", serif; }
+    /* line 52, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--big.scss */
+    .big_header_container .masthead_name--big .title {
+      font-size: 4.5vw; }
+    /* line 56, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--big.scss */
+    .big_header_container .masthead_name--big .subtitle:after {
+      content: "";
+      display: inline-block;
+      width: 100%; }
+    /* line 61, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--big.scss */
+    .big_header_container .masthead_name--big .subtitle .ital {
+      font: italic 2em "IM Fell English", cursive;
+      font-size: 1.38375vw; }
+    /* line 65, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--big.scss */
+    .big_header_container .masthead_name--big .subtitle .normal {
+      font-size: 1.845vw;
+      vertical-align: middle; }
+
+/* line 73, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--big.scss */
+.secondary_nav--big {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  align-self: flex-end;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  font-size: small;
+  color: #f0f3f3; }
+  /* line 2, /Users/gabeeayres/Sites/academy/public/stylesheets/_mixins.scss */
+  .secondary_nav--big a {
+    transition: color 0.75s;
+    color: #b4b7be; }
+    /* line 5, /Users/gabeeayres/Sites/academy/public/stylesheets/_mixins.scss */
+    .secondary_nav--big a:hover {
+      color: #f0f3f3; }
+
+/* line 88, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--big.scss */
+.primary_nav--big {
+  margin: 0;
+  padding: 0;
+  padding-top: 0.5em;
+  display: flex;
+  justify-content: space-around;
+  font: italic 2em "IM Fell English", cursive;
+  font-size: 3vw;
+  color: #341c27;
+  background-image: linear-gradient(bottom, #f0f3f3, transparent);
+  background-image: linear-gradient(to top, #f0f3f3, transparent); }
+  /* line 2, /Users/gabeeayres/Sites/academy/public/stylesheets/_mixins.scss */
+  .primary_nav--big a {
+    transition: color 0.75s;
+    color: #341c27; }
+    /* line 5, /Users/gabeeayres/Sites/academy/public/stylesheets/_mixins.scss */
+    .primary_nav--big a:hover {
+      color: #621c34; }
+
+@media (max-width: 700px) {
+  /* line 104, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--big.scss */
+  .masthead_logo {
+    display: none; }
+  /* line 107, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--big.scss */
+  .masthead {
+    margin-left: 0.5em; }
+  /* line 110, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--big.scss */
+  .primary_nav--big {
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 5vw; }
+    /* line 114, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--big.scss */
+    .primary_nav--big li {
+      margin: 0 5vw;
+      padding: 0.125em 0.5em;
+      text-align: center; } }
+
+/* line 7, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--small.scss */
+.small_header_container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  min-height: calc(4vw + 2 * 0.5em);
+  justify-content: flex-end;
+  background-color: #341c27;
+  color: #f0f3f3; }
+
+/* line 20, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--small.scss */
+.masthead_name--small {
+  position: absolute;
+  left: 0;
+  margin-top: 0.5em;
+  margin-left: 0.5em;
+  display: flex;
+  flex-flow: row nowrap;
+  width: 80vw;
+  font-family: "IM Fell English", serif;
+  font-size: 4vw; }
+  /* line 34, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--small.scss */
+  .masthead_name--small span {
+    margin: 0 0.125em; }
+  /* line 37, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--small.scss */
+  .masthead_name--small .ital {
+    font: italic 2em "IM Fell English", cursive;
+    vertical-align: middle;
+    font-size: 3vw;
+    padding-right: 0.125em; }
+
+/* line 46, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--small.scss */
+.primary_nav_item--small {
+  font-family: "IM Fell English", serif;
+  transition: background-color 0.75s, color 0.75s;
+  color: #b4b7be;
+  background-color: inherit; }
+  /* line 15, /Users/gabeeayres/Sites/academy/public/stylesheets/_mixins.scss */
+  .primary_nav_item--small:hover {
+    color: #f0f3f3;
+    background-color: #621c34; }
+
+/* line 51, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--small.scss */
+.secondary_nav_item--small {
+  color: #828b9b;
+  transition: background-color 0.75s, color 0.75s;
+  color: #828b9b;
+  background-color: inherit; }
+  /* line 15, /Users/gabeeayres/Sites/academy/public/stylesheets/_mixins.scss */
+  .secondary_nav_item--small:hover {
+    color: #f0f3f3;
+    background-color: #621c34; }
+
+/* line 57, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--small.scss */
+.dropdown_container {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end; }
+  /* line 66, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--small.scss */
+  .dropdown_container .dropdown_item {
+    width: 100vw;
+    text-align: right;
+    padding: 0.5em;
+    max-height: 0px;
+    font-size: 0px;
+    opacity: 0;
+    transition: padding 1s, opacity 0.5s, font-size 1s, max-height 1s, color 1s, background-color 1s; }
+  /* line 82, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--small.scss */
+  .dropdown_container:hover .navicon {
+    background-color: #b4b7be;
+    box-shadow: 0 0.375em #b4b7be, 0 0.75em #b4b7be; }
+  /* line 86, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--small.scss */
+  .dropdown_container:hover .dropdown_item {
+    max-height: 9999999px;
+    font-size: large;
+    opacity: 1; }
+  /* line 93, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--small.scss */
+  .dropdown_container .navicon {
+    margin: 0.5em;
+    margin-bottom: 1.25em;
+    background-color: #f0f3f3;
+    width: 1.25em;
+    height: 0.1875em;
+    border-radius: 3px;
+    box-shadow: 0 0 #f0f3f3, 0 0.375em #f0f3f3, 0 0.75em #f0f3f3;
+    transition: box-shadow 0.5s, background-color 0.5s; }
+
+@media (max-width: 300px) {
+  /* line 111, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--small.scss */
+  .masthead_name--small {
+    flex-wrap: wrap; }
+  /* line 114, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--small.scss */
+  .dropdown_container {
+    justify-content: space-around; }
+    /* line 116, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--small.scss */
+    .dropdown_container .dropdown_item {
+      text-align: center;
+      align-self: center;
+      letter-spacing: 0.15em; }
+    /* line 121, /Users/gabeeayres/Sites/academy/public/stylesheets/_header--small.scss */
+    .dropdown_container:hover .dropdown_item {
+      font-size: large; } }
+
+/* line 30, /Users/gabeeayres/Sites/academy/public/stylesheets/style.scss */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f0f3f3;
+  text-align: justify;
+  text-decoration: none;
+  font-family: "Antic", sans-serif;
+  letter-spacing: 0.025rem; }
+
+/* line 48, /Users/gabeeayres/Sites/academy/public/stylesheets/style.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "IM Fell English", serif;
+  text-align: left; }
+
+/* line 58, /Users/gabeeayres/Sites/academy/public/stylesheets/style.scss */
+main {
+  margin: 0.5em;
+  padding: 0.5em;
+  flex-grow: 1; }
+
+/* line 65, /Users/gabeeayres/Sites/academy/public/stylesheets/style.scss */
+ul,
+ol {
+  padding: 0; }
+  /* line 68, /Users/gabeeayres/Sites/academy/public/stylesheets/style.scss */
+  ul li,
+  ol li {
+    margin-left: 25px; }
+
+/* line 73, /Users/gabeeayres/Sites/academy/public/stylesheets/style.scss */
+ul li {
+  list-style-type: circle; }
+
+/* line 77, /Users/gabeeayres/Sites/academy/public/stylesheets/style.scss */
+ol li {
+  list-style-type: decimal; }
+
+/* line 82, /Users/gabeeayres/Sites/academy/public/stylesheets/style.scss */
+.pl li {
+  list-style-type: none;
+  margin-left: 0px; }
+
+/* line 87, /Users/gabeeayres/Sites/academy/public/stylesheets/style.scss */
+a {
+  color: inherit;
+  text-decoration: inherit; }
+
+/* line 93, /Users/gabeeayres/Sites/academy/public/stylesheets/style.scss */
+.big_header_container {
+  display: none; }
+
+/* line 97, /Users/gabeeayres/Sites/academy/public/stylesheets/style.scss */
+.small_header_container {
+  display: flex; }
+
+@media (min-width: 450px) {
+  /* line 103, /Users/gabeeayres/Sites/academy/public/stylesheets/style.scss */
+  .big_header_container {
+    display: flex; }
+  /* line 106, /Users/gabeeayres/Sites/academy/public/stylesheets/style.scss */
+  .small_header_container {
+    display: none; } }
+
+/* line 112, /Users/gabeeayres/Sites/academy/public/stylesheets/style.scss */
+.item_box {
+  display: flex;
+  flex-direction: column;
+  margin: 0.25em;
+  padding: 0.25em; }
+  /* line 117, /Users/gabeeayres/Sites/academy/public/stylesheets/style.scss */
+  .item_box li {
+    list-style-type: none; }
+  /* line 120, /Users/gabeeayres/Sites/academy/public/stylesheets/style.scss */
+  .item_box a {
+    font-size: larger;
+    margin: 0.25em;
+    padding: 0.25em 0.5em;
+    border-radius: 6px;
+    transition: background-color 0.75s, color 0.75s;
+    color: #f0f3f3;
+    background-color: #828b9b; }
+    /* line 15, /Users/gabeeayres/Sites/academy/public/stylesheets/_mixins.scss */
+    .item_box a:hover {
+      color: white;
+      background-color: #b4b7be; }
+
+/* line 130, /Users/gabeeayres/Sites/academy/public/stylesheets/style.scss */
+.footer_container {
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  font-size: small;
+  text-align: left;
+  background-color: #341c27;
+  color: #f0f3f3; }
+  /* line 142, /Users/gabeeayres/Sites/academy/public/stylesheets/style.scss */
+  .footer_container .footer_item {
+    flex-grow: 0;
+    margin: 0.5em;
+    padding: 0.5em; }
+
+/* line 150, /Users/gabeeayres/Sites/academy/public/stylesheets/style.scss */
+.form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  text-align: left; }
+  /* line 158, /Users/gabeeayres/Sites/academy/public/stylesheets/style.scss */
+  .form .column_list_container {
+    margin: 0.5em 0;
+    display: flex;
+    flex-direction: column;
+    height: 20vm; }
+    /* line 163, /Users/gabeeayres/Sites/academy/public/stylesheets/style.scss */
+    .form .column_list_container ul {
+      margin: 0; }
+  /* line 167, /Users/gabeeayres/Sites/academy/public/stylesheets/style.scss */
+  .form textarea {
+    padding: 0.5em;
+    width: 100%; }
+
+/*# sourceMappingURL=style.css.map */

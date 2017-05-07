@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Set default title and image -->
+  <% if @title
+        @title = @title << ' | Academy of Scholars and Fools'
+      else
+        @title = 'Academy of Scholars and Fools'
+      end
+      @image ||= 'cliffside_castle.jpg'
+      @image = Image.find_by_file_name(@image)
+    %>
+
+    <!-- Title -->
+    <title>
+      <%= @title %>
+    </title>
+
+    <!-- Metadata -->
+    <meta lang="en">
+    <meta charset="utf-8">
+    <meta name="description" content="<%= @description %>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Css -->
+    <%= stylesheet_link_tag "/stylesheets/style.css" %>
+
+      <!-- Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Antic|IM+Fell+English:400,400i" rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- Big header and navbar and everything  -->
+  <nav class="big_header_container" style='background-image: url(<%="../images/#{@image.file_name}" %>);'>
+    <!-- Secondary Navbar (big)-->
+    <ul class="secondary_nav--big pl">
+      <li><a href="<%= url('/students') %>">Students</a></li>
+      <li><a href="<%= url('/faculty-and-staff') %>">Faculty &amp; Staff</a></li>
+      <li><a href="<%= url('/guild') %>">Guild</a></li>
+      <li><a href="<%= url('/visitors') %>">Visitors</a></li>
+    </ul>
+    <div class="masthead">
+      <!--Logo-->
+      <%= link_to(image_tag("/images/placeholder_logo_light.png", :alt => "Logo", :class => "masthead_logo"), url('/')) %>
+        <!-- Title -->
+        <a href="<%= url('/') %>" class="masthead_name--big">
+          <p class="title">ACADEMY</p>
+          <p class="subtitle">
+            <span class="ital">of</span>
+            <span class="normal">SCHOLA<i>RS</i></span>
+            <span class="ital">and</span>
+            <span class="normal">FOOLS</span>
+          </p>
+        </a>
+    </div>
+
+
+
+
+
+    <!-- Primary Navbar (big) -->
+    <ul class="primary_nav--big pl">
+      <li><a href="<%= url('/academics') %>">Academics</a></li>
+      <li><a href="<%= url('/admissions') %>">Admissions &amp; Aid</a></li>
+      <li><a href="<%= url('/student-life') %>">Student Life</a></li>
+      <li><a href="<%= url('/about') %>">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- Small Header and Navbar (Primary & Secondary) -->
+  <header class="small_header_container">
+    <!-- Small Masthead -->
+    <div class="masthead_name--small">
+      <span>ACADEMY</span>
+      <span class="ital">of</span>
+      <span>SCHOLA<i>RS</i></span>
+      <span class="ital">and</span>
+      <span>FOOLS</span>
+    </div>
+
+    <!--Small Navigation-->
+    <nav class="dropdown_container pl">
+      <!--Small primary navigation-->
+      <li class="navicon"></li>
+      <a href="<%= url('/academics') %>">
+        <li class="dropdown_item primary_nav_item--small">Academics</li>
+      </a>
+      <a href="<%= url('/admissions') %>">
+        <li class="dropdown_item primary_nav_item--small">Admissions &amp; Aid</li>
+      </a>
+      <a href="<%= url('/student-life') %>">
+        <li class="dropdown_item primary_nav_item--small">Student Life</li>
+      </a>
+      <a href="<%= url('/about') %>">
+        <li class="dropdown_item primary_nav_item--small">About</li>
+      </a>
+
+      <!-- Small secondary navigation -->
+      <a href="<%= url('/students') %>">
+        <li class="dropdown_item secondary_nav_item--small">Students</li>
+      </a>
+      <a href="<%= url('/faculty-and-staff') %>">
+        <li class="dropdown_item secondary_nav_item--small">Faculty &amp; Staff</li>
+      </a>
+      <a href="<%= url('/guild') %>">
+        <li class="dropdown_item secondary_nav_item--small">Guild</li>
+      </a>
+      <a href="<%= url('/visitors') %>">
+        <li class="dropdown_item secondary_nav_item--small">Visitors</li>
+      </a>
+    </nav>
+  </header>
+
+
+  <main>
+    <%= yield %>
+  </main>
+
+  <footer class="footer_container">
+    <div class="footer_item">
+      <%= @image.attribution %>
+    </div>
+    
+    <div class="footer_item">
+      <% date = 1257 + (Date.today.year - 2017) %>
+      <%= "©Copyright #{date} by the President and Daughter-in-Law Elect of the Academy of Scholars and Fools." %>
+    </div>
+    <div class="footer_item">
+      More links will go here when I get my shit together.
+    </div>
+  </footer>
+
+</body>
+
+</html>

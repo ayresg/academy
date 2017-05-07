@@ -1,0 +1,18 @@
+Department list
+<!-- Iterate through list of departments -->
+<ul class="item_box pl">
+  <% Department.all.each do |dept| %>
+      <%= link_to(
+  "<li>#{dept.name}</li>", "departments/#{dept.page_address}") %>
+  <% end %>  
+</ul>
+
+Research
+Online learning
+Special programs
+Study abroad
+Facilities
+-Library
+-Artificery
+-Amphitheatre
+-Necrobiological supercomputer

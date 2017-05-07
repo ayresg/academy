@@ -1,0 +1,145 @@
+Sitemap:
+Homepage
+- Academics
+  - List of departments, separated by Scholars and Fools
+    - Scholars:
+      - Necrobiology (NECR)
+      - Is this the Dept of Riddles? (interdisciplinary) (RID?)
+      - Chemistry (CHEM)
+      - Sculpture (SCUL)
+      - Revered Dead Languages (LANG)
+      - Cryptography (CRYP)
+      - Biology (BIO)
+      - History (HIST)
+      - Planology (PLAN)
+      - Astronomy (ASTR)
+      - Alchemy (ALCH)
+      - Generalized Abstract Nonsense (ABST)
+      - Artificery (ARTF)
+    - Fools:
+      - Village Idiocy (VILL)
+      - Is this the Dept of Riddles? (interdisciplinary) (RID?)
+      - Poor Labeling (RID?)
+      - Melodrama (DRMA)
+    - Interdisciplinary:
+      - Is this the Dept of Riddles? (RID?)
+        - The Case of the Camel (camelCase)
+        - The Case of the Snake (snake_case)
+          - THE_CASE_OF_THE_SCREAMING_SNAKE
+      - Syntactic sugar (Cryptography and Village Idiocy: Pie Dept)
+      - Phantom of the Operational Semantics (Cryptography and Melodrama)
+
+    - Proposed additional Fools departments:
+      - Department of Not Having Enough Departments
+  - Online learning
+  - Special programs, if any
+  - Cool things (library, artificery, amphitheatre)
+
+- Admissions & Aid
+  - information for different types of applicants
+    - apprentices / people with Guild sponsors
+    - untrained people
+    - guild members broadening their areas of expertise
+  -
+
+- Student Life
+  - Athletics
+  - Arts
+  - Room and board
+  - Health and safety
+  - Academy town
+  - Student organizations
+  - Events and activities
+- About
+  - History & mission
+  - Campus map & Directions
+  - Community involvement
+  - Diversity
+
+- Directory
+- Sitemap
+
+- Students
+  - Events
+  - Resources
+  - Undergrads
+  - Graduate students
+  - Continuing education
+  - Online learning
+  - various internal nonsense
+- Faculty & Staff
+  - various internal nonsense
+- Family
+  - Parent resources
+  - Campus information
+  - Public safety
+- Alumni
+  - should probably just be about the guild
+- Visitors
+
+Faculty
+- John Galt
+- John Goat
+
+
+Who is this website actually for?
+- prospective students googling the school
+- current students looking at departments, opportunities, etc
+
+Prospective students:
+  - courses / departments / curricula
+  - resources and opportunities and stuff that's good about the school
+
+    -
+  - visit the academy or see maps and shit
+    - tours for different types of things
+  - careers and stuff after academy
+
+Current students:
+  - courses and departments
+  - course planning / academic advising
+  - school policies
+  - academic calendar
+  - student employment (for example, at the artificery, library, amphitheatre, various administrative stuff, medical, campus paladins, student work/internships/summer apprenticeships)
+Faculty
+
+
+WORLDBUILDING QUESTIONS
+- is tiered education with grad school even a thing?
+- how do the guilds sustain themselves? what do the scholars do to get money?
+
+
+
+Fun fact: the artificial river wasn't just to provide power for the dept of artificery, it was also to make the landscape more scenic for the most foolish painters in the world
+(A MORON
+A PLAN
+A CANAL
+PANOROMA)
+
+Learning online (as in, on a tightrope)
+
+Dept of Melodrama lists Despard as the Baron of the department, you have to go hunting around to find the actual dean
+There's a statue of Despard, cloak billowing, holding a skull (his own). There's a sappy plaque nearby explaining who Despard was, worn nearly bare by the ravages of time, and another, nicer, plaque next to it explaining that the previous one has been worn nearly bare by the ravages of time.
+Despard hasn't actually been holding a skull since it disappeared in a burst of blue flame one night; instead he now holds a small plaque explaining this. This is the third such plaque. The first two also disappeared in a burst of blue flame.
+
+Somewhere on the website include a bulleted list of great works or inventions that the academy has produced
+One of the entries is "Jeremy" with no elaboration
+the Dodeca Lisa
+
+
+Things to remember you can do:
+<input>
+<blockquote>
+<blockquote cite="https://de...     // blockquotes
+<q cite="ht                        // inline quotes
+<abbr title="Hypertext Markup Language">HTML</abbr>
+<time datetime="2016-01-20">20 January 2016</time>
+<time datetime="2016-01-20T19:30">7.30pm, 20 January 2016</time>
+
+body {
+    background-image: url("paper.gif");
+    background-position: right top;
+    background-repeat: no-repeat;
+}
+
+// can do background colors for ANY element!
