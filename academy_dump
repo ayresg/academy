@@ -1,0 +1,467 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.6.2
+-- Dumped by pg_dump version 9.6.2
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: ar_internal_metadata; Type: TABLE; Schema: public; Owner: gabeeayres
+--
+
+CREATE TABLE ar_internal_metadata (
+    key character varying NOT NULL,
+    value character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE ar_internal_metadata OWNER TO gabeeayres;
+
+--
+-- Name: course_depts; Type: TABLE; Schema: public; Owner: gabeeayres
+--
+
+CREATE TABLE course_depts (
+    id bigint NOT NULL,
+    course_id integer,
+    department_id integer
+);
+
+
+ALTER TABLE course_depts OWNER TO gabeeayres;
+
+--
+-- Name: course_depts_id_seq; Type: SEQUENCE; Schema: public; Owner: gabeeayres
+--
+
+CREATE SEQUENCE course_depts_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE course_depts_id_seq OWNER TO gabeeayres;
+
+--
+-- Name: course_depts_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gabeeayres
+--
+
+ALTER SEQUENCE course_depts_id_seq OWNED BY course_depts.id;
+
+
+--
+-- Name: courses_id_seq; Type: SEQUENCE; Schema: public; Owner: gabeeayres
+--
+
+CREATE SEQUENCE courses_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE courses_id_seq OWNER TO gabeeayres;
+
+--
+-- Name: courses; Type: TABLE; Schema: public; Owner: gabeeayres
+--
+
+CREATE TABLE courses (
+    name character varying(255) NOT NULL,
+    description character varying(600),
+    number smallint,
+    id integer DEFAULT nextval('courses_id_seq'::regclass) NOT NULL
+);
+
+
+ALTER TABLE courses OWNER TO gabeeayres;
+
+--
+-- Name: departments_id_seq; Type: SEQUENCE; Schema: public; Owner: gabeeayres
+--
+
+CREATE SEQUENCE departments_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE departments_id_seq OWNER TO gabeeayres;
+
+--
+-- Name: departments; Type: TABLE; Schema: public; Owner: gabeeayres
+--
+
+CREATE TABLE departments (
+    name character varying(255) NOT NULL,
+    page_address character varying(255),
+    header_image_name character varying(600),
+    abbrev character varying(4) NOT NULL,
+    id integer DEFAULT nextval('departments_id_seq'::regclass) NOT NULL
+);
+
+
+ALTER TABLE departments OWNER TO gabeeayres;
+
+--
+-- Name: images; Type: TABLE; Schema: public; Owner: gabeeayres
+--
+
+CREATE TABLE images (
+    file_name character varying(80),
+    author_name character varying(80),
+    author_address character varying(255),
+    image_address character varying(255),
+    license character varying(80),
+    name character varying(80)
+);
+
+
+ALTER TABLE images OWNER TO gabeeayres;
+
+--
+-- Name: models; Type: TABLE; Schema: public; Owner: gabeeayres
+--
+
+CREATE TABLE models (
+    id bigint NOT NULL,
+    name character varying
+);
+
+
+ALTER TABLE models OWNER TO gabeeayres;
+
+--
+-- Name: models_id_seq; Type: SEQUENCE; Schema: public; Owner: gabeeayres
+--
+
+CREATE SEQUENCE models_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE models_id_seq OWNER TO gabeeayres;
+
+--
+-- Name: models_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gabeeayres
+--
+
+ALTER SEQUENCE models_id_seq OWNED BY models.id;
+
+
+--
+-- Name: schema_migrations; Type: TABLE; Schema: public; Owner: gabeeayres
+--
+
+CREATE TABLE schema_migrations (
+    version character varying NOT NULL
+);
+
+
+ALTER TABLE schema_migrations OWNER TO gabeeayres;
+
+--
+-- Name: course_depts id; Type: DEFAULT; Schema: public; Owner: gabeeayres
+--
+
+ALTER TABLE ONLY course_depts ALTER COLUMN id SET DEFAULT nextval('course_depts_id_seq'::regclass);
+
+
+--
+-- Name: models id; Type: DEFAULT; Schema: public; Owner: gabeeayres
+--
+
+ALTER TABLE ONLY models ALTER COLUMN id SET DEFAULT nextval('models_id_seq'::regclass);
+
+
+--
+-- Data for Name: ar_internal_metadata; Type: TABLE DATA; Schema: public; Owner: gabeeayres
+--
+
+COPY ar_internal_metadata (key, value, created_at, updated_at) FROM stdin;
+environment	default_env	2017-05-01 14:11:01.111836	2017-05-01 14:11:01.111836
+\.
+
+
+--
+-- Data for Name: course_depts; Type: TABLE DATA; Schema: public; Owner: gabeeayres
+--
+
+COPY course_depts (id, course_id, department_id) FROM stdin;
+10	6	3
+11	6	15
+12	7	1
+13	7	2
+14	7	5
+15	8	9
+16	8	12
+17	9	3
+18	9	16
+\.
+
+
+--
+-- Name: course_depts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gabeeayres
+--
+
+SELECT pg_catalog.setval('course_depts_id_seq', 18, true);
+
+
+--
+-- Data for Name: courses; Type: TABLE DATA; Schema: public; Owner: gabeeayres
+--
+
+COPY courses (name, description, number, id) FROM stdin;
+Let Me Drive My Van (Into Your Heart)	\N	888	6
+Introduction to Not Getting Blown Up	We all face explosions at some point in our lives. Whether it's an alchemical experiment gone wrong, a hilarious prank, or even a total coincidence that isn't your fault at all, you need to know how to handle dangerous situations. Topics include basic lab safety, house fires, mold and fungus, acid damage, smoke inhalation, chemical and alchemical fires, and magical effects. We will cover Guild-enforced best practices and pay particular attention to the Academy's rules in recognition of the large alchemical fire of 1255.	1	7
+Introduction to Not Being Driven Insane By Eldritch Truths Man Was Not Meant to Know	When you gaze into the abyss, and the abyss gazes also into you, can you make confident eye contact and continue with your research? As eldritch knowledge progresses, the danger of learning too much and becoming a gibbering mess is increasing. Through weekly readings and exercises, students will strengthen their will and raise their mental defenses. We will cover common-sense and Guild-mandated safety measures, case studies of knowledge accidents, and first aid. Course staff are not responsible for any harm that may come to students during their studies.	1	8
+Anti-Gravity Visualization	Have you ever wondered what things would look like if there was no gravity? More than that-- if there was anti-gravity?! Well, wonder no more. In this survey of imaginary things, we will cover such hypotheticals as "what if there was about the same amount of gravity, but maybe slightly less?" and "what if my cat had gravity?" and, indeed, "what if you put my cat in anti-gravity?".	270	9
+	      	\N	10
+\.
+
+
+--
+-- Name: courses_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gabeeayres
+--
+
+SELECT pg_catalog.setval('courses_id_seq', 10, true);
+
+
+--
+-- Data for Name: departments; Type: TABLE DATA; Schema: public; Owner: gabeeayres
+--
+
+COPY departments (name, page_address, header_image_name, abbrev, id) FROM stdin;
+Astronomy	astronomy	aurora.jpeg	ASTR	3
+Cryptography	cryptography	investigator_writing.jpg	CRYP	6
+Melodrama	melodrama	mask_and_rose.jpg	MDRA	10
+Planology	planology	glowing_portal_lady.jpg	PLAN	12
+Poor Labeling	labeling	r.jpg	RID	13
+Village Idiocy	villageidiocy	jesters_joking.jpg	VILI	15
+Artificery	artificery	lamp_workshop.jpg	ARTF	2
+Sculpture	sculpture	hands_sculpting.jpg	SCUL	16
+Jesting	jesting	jolly_jugglers.jpg	JEST	17
+History	history	old_books.jpg	HIST	8
+Generalized Abstract Nonsense	abst	swirly_lights.jpg	ABST	7
+Biology	biology	pallas_cat.jpg	BIO	4
+Necrobiology	necrobiology	skull_darkness.jpg	NECB	11
+Revered Dead Languages	deadlang	manuscript.jpg	DLAN	14
+Alchemy	alchemy	potion_shelf.jpg	ALCH	1
+Chemistry	chemistry	test_tubes.jpg	CHEM	5
+Is this the Department of Riddles?	riddles	party_pigs.jpg	RID?	9
+\.
+
+
+--
+-- Name: departments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gabeeayres
+--
+
+SELECT pg_catalog.setval('departments_id_seq', 17, true);
+
+
+--
+-- Data for Name: images; Type: TABLE DATA; Schema: public; Owner: gabeeayres
+--
+
+COPY images (file_name, author_name, author_address, image_address, license, name) FROM stdin;
+abstract_lights.jpeg	Joshua Sortino	https://unsplash.com/@sortino	https://unsplash.com/photos/LqKhnDzSF-8	CC0	
+arched_windows.jpg	Eduard Militaru	https://unsplash.com/@eduardmilitaru	https://unsplash.com/photos/l29U993HB5A	CC0	
+arched_window_light.jpg	Chad Greiter	https://unsplash.com/@cgreiter	https://unsplash.com/photos/-0gBnnMdQPw	CC0	
+aurora.jpeg	Vincent Guth	https://unsplash.com/@vingtcent	https://unsplash.com/photos/62V7ntlKgL8	CC0	
+bright_meadow_and_dress.jpg	Ryan McGuire	http://www.laughandpee.com/	http://www.gratisography.com/	CC0	
+bright_night_sky.jpeg	Dino Reichmuth	https://unsplash.com/@dinoreichmuth	https://unsplash.com/photos/TmHot1VRct0	CC0	
+cauldrons.jpg	Tikkho Maciel	https://unsplash.com/@tikkho	https://unsplash.com/photos/zQgsdQvj1IM	CC0	
+cliffside_castle.jpg	Still Miracle	https://unsplash.com/@stillmiracle	https://unsplash.com/photos/ClF0jwo1BjU	CC0	Paused Medieval Times
+dramatic_yellow_clock.jpg	Amar Saleem	https://stocksnap.io/author/44167	https://stocksnap.io/photo/MKPEXNY8FK	CC0	
+facade_bricks.jpg	Mitch Rosen	https://stocksnap.io/author/34874	https://stocksnap.io/photo/ZDLPSUH7Y2	CC0	
+facade_stained_glass.jpg	Mitch Rosen	https://stocksnap.io/author/34874	https://stocksnap.io/photo/ZDLPSUH7Y2	CC0	
+fire_breathing.jpg	Alejandro Alvarez	https://unsplash.com/@a2foto	https://unsplash.com/photos/ZK_KZnT5z9U	CC0	Fire Breathing
+girl_with_book.jpg	Ermin Celikovic	https://unsplash.com/@ermin	https://unsplash.com/photos/hL_kvhBmTUI	CC0	
+girl_with_skull.jpg	Mallory Johndrow	https://unsplash.com/@vintagraphproductions	https://unsplash.com/photos/KAsjiTRuihk	CC0	
+glass_handling.jpg	Sidney Perry	https://unsplash.com/@sidneyperryphotography	https://unsplash.com/photos/bixorhX9T18	CC0	
+jesters_joking.jpg	federicopusimedda	https://pixabay.com/en/users/federicopusimedda-3442829/	https://pixabay.com/en/jester-city-middle-ages-costume-1714117/	CC0	
+hands_and_map.jpg	Natalie Fox	https://unsplash.com/@ellladee	https://unsplash.com/photos/RFId0_7kep4	CC0	
+hands_sculpting.jpg	Alex Jones	https://unsplash.com/@alexjones	https://unsplash.com/photos/Tq4YjCa2BSc	CC0	
+inkwell_and_quill.jpg	Pexels	https://pixabay.com/en/users/Pexels-2286921/	https://pixabay.com/en/blur-business-desk-drink-education-1869579/	CC0	
+investigator_writing.jpg	João Silas	https://stocksnap.io/author/8813	https://stocksnap.io/photo/NO25KUN6AI	CC0	
+jolly_jugglers.jpg	Christopher Favero	https://www.flickr.com/photos/cfavero/	https://www.flickr.com/photos/cfavero/6116387314	CC BY-SA 2.0	Acrobats Juggling on Shoulders
+lamp_workshop.jpg	Florian Bernhardt	https://unsplash.com/@floww	https://unsplash.com/photos/bnXUaEq9xYQ	CC0	Let there be light
+light_portal.jpeg	Kamesh Vendula	https://unsplash.com/@kvedula	https://unsplash.com/photos/ISL7czxIP-k	CC0	
+man_playing_guitar.jpg	Caio	https://www.pexels.com/u/caio/	https://www.pexels.com/photo/streets-music-musician-street-art-60783/	CC0	Man Playing Acoustic Guitar
+metal_cubbies.jpg	Sindre Aalberg	https://unsplash.com/@sindreaalberg	https://unsplash.com/photos/mEr7U5yfYt8	CC0	
+old_books.jpg	Michal Jarmoluk	https://stocksnap.io/author/34629	https://stocksnap.io/photo/YLD54C7D2C	CC0	
+owl_handler.jpg	Zachary Bedrosian	https://unsplash.com/@bedrock123	https://unsplash.com/photos/0_rKJ9_kW7g	CC0	
+pensive_bunny.jpg	Ryan McGuire	http://www.laughandpee.com/	http://www.gratisography.com/	CC0	
+plant_flasks.jpg	chuttersnap	https://unsplash.com/@chuttersnap	https://unsplash.com/photos/UmncJq4KPcA	CC0	
+script.jpg	Michal Jarmoluk	https://stocksnap.io/author/34629	https://stocksnap.io/photo/XQ1YOBCHVT	CC0	
+skull_crypt.jpg	Bistrian Iosep	https://unsplash.com/@bistrian	https://unsplash.com/photos/9ECfxPDZ3gs	CC0	
+smiling_elf.jpg	Giorgio Minguzzi	https://www.flickr.com/photos/iz4aks/	https://www.flickr.com/photos/iz4aks/5503256855/in/album-72157626085544213/	CC BY-SA 2.0	Elf Tolkein
+smoke_and_fire.jpg	Petra Brýdlová	https://unsplash.com/@zvyzla	https://unsplash.com/photos/bXY94mhkgWE	CC0	Last day of the year
+snow_bubble.jpg	Aaron Burden	https://unsplash.com/@aaronburden	https://unsplash.com/photos/RgTI2KaQ5N4	CC0	
+sunlit_riders.jpg	Tobias Keller	https://unsplash.com/@tokeller	https://unsplash.com/photos/ucdh5HMkRMg	CC0	The Cattle Herders
+vaulted_library.jpg	Michael D Beckwith	https://unsplash.com/@michael_d_beckwith	https://unsplash.com/photos/KwUxXgTIEwk	CC0	
+walking_in_forest.jpg	Jamie Taylor	https://unsplash.com/@jamiehowardtaylor	https://unsplash.com/photos/kTXEJSt1ruo	CC0	
+laughing_clifftop_guys.jpg	Matheus Ferrerro	https://unsplash.com/@matheusferrero	https://unsplash.com/photos/TkrRvwxjb_8	CC0	\N
+swirly_lights.jpg	Ahmad Dirini	https://unsplash.com/@ahmadirini	https://unsplash.com/photos/F7Sive0fwIg	CC0	Water, Light and long shutter speeds
+town_skyline.jpg	Annie Spratt	https://unsplash.com/@anniespratt	https://unsplash.com/photos/OousVlBRHbQ	CC0	\N
+skull_darkness.jpg	Matthew MacQuarrie	https://unsplash.com/@matmacq	https://unsplash.com/collections/379889/scream-i-want-my-mummy?photo=u6OnpbMuZAs	CC0	\N
+cobweb.jpg	Al Buettner	https://pixabay.com/en/users/FixiPixi_deluxe-2038891/	https://pixabay.com/en/cobweb-night-smoke-network-nature-1644984/	CC0	
+vivid_juggler.jpg	Michelle Maria	https://pixabay.com/en/users/Mariamichelle-165491/	https://pixabay.com/en/juggler-person-people-man-show-1938707/	CC0	
+witches_three.jpg	Čeština	https://pixabay.com/en/users/Taliesi-3459006/	https://pixabay.com/en/woman-priestesses-skull-landscape-2139226/	CC0	
+dandelion.jpg	Kati	https://pixabay.com/en/users/TanteTati-77004/	https://pixabay.com/en/flower-snow-winter-white-wintry-2146627/	CC0	
+spiral_stained_glass.jpeg	Marybeth	https://pixabay.com/en/users/msandersmusic-1972097/	https://pixabay.com/en/stained-glass-spiral-circle-pattern-1181864/	CC0	
+party_pigs.jpg	Ryan McGuire	http://www.laughandpee.com/	http://www.gratisography.com/	CC0	
+r.jpg	Daria Nepriakhina	http://www.bydaria.com/	http://epicantus.tumblr.com/post/148253712298/by-daria-epicantus-its-free-to-use-cc0	CC0	
+street_with_streetlights.jpg	Nimuskis	https://pixabay.com/en/users/Nimuskis-4889567/	https://pixabay.com/en/madrid-park-lights-europe-outdoor-2164665/	CC0	\N
+ancient_wall.jpg	Mariusz Mateuszewski	https://pixabay.com/en/users/mzmatuszewski0-825220/	https://pixabay.com/en/abbey-columns-church-architecture-1859482/	CC0	\N
+people_with_torches.jpg	Ron Porter	https://pixabay.com/en/users/RonPorter-291009/	https://pixabay.com/en/innsbruck-austria-old-town-402612/	CC0	\N
+pallas_cat.jpg	Karen Arnold	https://pixabay.com/en/users/Kaz-19203/	https://pixabay.com/en/cat-pallas-cat-cute-mewing-wild-164371/	CC0	\N
+glowing_portal_lady.jpg	Pete Linforth	https://pixabay.com/en/users/HypnoArt-202249/	https://pixabay.com/en/science-fiction-teleportation-2127670/	CC0	
+fragmented_golem.jpg	Okan Caliskan	https://pixabay.com/en/users/Activedia-665768/	https://pixabay.com/en/android-robot-technology-cyborg-770062/	CC0	
+skeleton_in_park.jpg	Chris	https://pixabay.com/en/users/chrisjmit-248609/	https://pixabay.com/en/skeleton-forest-scary-death-life-1522620/	CC0	\N
+mask_and_rose.jpg	Silvia & Frank	https://pixabay.com/en/users/pixel2013-2364555/	https://pixabay.com/en/mask-handcuffs-roses-red-roses-red-2095337/	CC0	
+valves.jpg	Peter H	https://pixabay.com/en/users/Tama66-1032521/	https://pixabay.com/en/wheel-valve-heating-line-turn-2137043/	CC0	
+tarot_cards.jpg	Mira DeShazer	https://pixabay.com/en/users/MiraDeShazer-1326551/	https://pixabay.com/en/tarot-cards-magic-fortune-telling-991041/	CC0	
+ida_statue.jpg	Iwona Olczyk	https://pixabay.com/en/users/Iwona_Olczyk-89275/	https://pixabay.com/en/sculpture-architecture-the-statue-328751/	CC0	\N
+smoldering_knight.jpg	Anna	https://pixabay.com/en/users/Fuchsia-1415632/	https://pixabay.com/en/armor-knight-man-942933/	CC0	\N
+manuscript.jpg	Henryk Niestrój	https://pixabay.com/en/users/Arcaion-2057886/	https://pixabay.com/en/document-parchment-the-middle-ages-1729019/	CC0	\N
+tightrope_walker.jpg	Mark Kent	https://www.flickr.com/photos/flamesworddragon/	https://www.flickr.com/photos/flamesworddragon/9533552890/in/album-72157635115739836/	CC BY-SA 2.0	High Wire
+potion_shelf.jpg	Ralf Steinberger	https://www.flickr.com/photos/ralf-steinberger/	https://www.flickr.com/photos/ralf-steinberger/34322619695/	CC BY-SA 2.0	Witch's kitchen in Rosario, Argentina
+test_tubes.jpg	Paige Powers	https://www.flickr.com/photos/paigggeyy/	https://www.flickr.com/photos/paigggeyy/5533236567/	CC BY-SA 2.0	Test Tubes
+town_fairytale.jpg	Viktor Hanacek	https://picjumbo.com/	https://picjumbo.com/vintage-fairytale-houses-in-austrian-mountains/	\N	Vintage Fairytale Houses in Austrian Mountains
+town_rustic_colors.jpg	Fineas Anton	https://unsplash.com/@fineas_anton	https://unsplash.com/photos/ZGU_tiOkb1s	CC0	\N
+\.
+
+
+--
+-- Data for Name: models; Type: TABLE DATA; Schema: public; Owner: gabeeayres
+--
+
+COPY models (id, name) FROM stdin;
+\.
+
+
+--
+-- Name: models_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gabeeayres
+--
+
+SELECT pg_catalog.setval('models_id_seq', 1, false);
+
+
+--
+-- Data for Name: schema_migrations; Type: TABLE DATA; Schema: public; Owner: gabeeayres
+--
+
+COPY schema_migrations (version) FROM stdin;
+20170501140829
+20170501151854
+20170501161943
+20170501203910
+\.
+
+
+--
+-- Name: ar_internal_metadata ar_internal_metadata_pkey; Type: CONSTRAINT; Schema: public; Owner: gabeeayres
+--
+
+ALTER TABLE ONLY ar_internal_metadata
+    ADD CONSTRAINT ar_internal_metadata_pkey PRIMARY KEY (key);
+
+
+--
+-- Name: course_depts course_depts_pkey; Type: CONSTRAINT; Schema: public; Owner: gabeeayres
+--
+
+ALTER TABLE ONLY course_depts
+    ADD CONSTRAINT course_depts_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: courses courses_pkey; Type: CONSTRAINT; Schema: public; Owner: gabeeayres
+--
+
+ALTER TABLE ONLY courses
+    ADD CONSTRAINT courses_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: departments departments_pkey; Type: CONSTRAINT; Schema: public; Owner: gabeeayres
+--
+
+ALTER TABLE ONLY departments
+    ADD CONSTRAINT departments_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: models models_pkey; Type: CONSTRAINT; Schema: public; Owner: gabeeayres
+--
+
+ALTER TABLE ONLY models
+    ADD CONSTRAINT models_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: schema_migrations schema_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: gabeeayres
+--
+
+ALTER TABLE ONLY schema_migrations
+    ADD CONSTRAINT schema_migrations_pkey PRIMARY KEY (version);
+
+
+--
+-- Name: index_course_depts_on_course_id; Type: INDEX; Schema: public; Owner: gabeeayres
+--
+
+CREATE INDEX index_course_depts_on_course_id ON course_depts USING btree (course_id);
+
+
+--
+-- Name: index_course_depts_on_department_id; Type: INDEX; Schema: public; Owner: gabeeayres
+--
+
+CREATE INDEX index_course_depts_on_department_id ON course_depts USING btree (department_id);
+
+
+--
+-- PostgreSQL database dump complete
+--
+
