@@ -33,7 +33,7 @@
 
 <body>
   <!-- Big header and navbar and everything  -->
-  <nav class="big_header_container" style='background-image: url(<%="../images/#{@image.file_name}" %>);'>
+  <nav class="big_header_container" style='background-image: url(<%="../images/banners/#{@image.file_name}" %>);'>
     <!-- Secondary Navbar (big)-->
     <ul class="secondary_nav--big pl">
       <li><a href="<%= url('/students') %>">Students</a></li>
@@ -41,20 +41,20 @@
       <li><a href="<%= url('/guild') %>">Guild</a></li>
       <li><a href="<%= url('/visitors') %>">Visitors</a></li>
     </ul>
-    <div class="masthead">
+    <a href="<%= url('/') %>" class="masthead">
       <!--Logo-->
-      <%= link_to(image_tag("/images/placeholder_logo_light.png", :alt => "Logo", :class => "masthead_logo"), url('/')) %>
+      <div class="arms"><%= File.read('views/academy_arms.svg') %></div>
         <!-- Title -->
-        <a href="<%= url('/') %>" class="masthead_name--big">
-          <p class="title">ACADEMY</p>
-          <p class="subtitle">
-            <span class="ital">of</span>
-            <span class="normal">SCHOLA<i>RS</i></span>
-            <span class="ital">and</span>
-            <span class="normal">FOOLS</span>
-          </p>
-        </a>
-    </div>
+      <div class="masthead_name--big">
+        <p class="title">ACADEMY</p>
+        <p class="subtitle">
+          <span class="ital">of</span>
+          <span class="normal">SCHOLA<i>RS</i></span>
+          <span class="ital">and</span>
+          <span class="normal">FOOLS</span>
+        </p>
+      </div>
+    </a>
 
 
 

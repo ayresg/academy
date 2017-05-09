@@ -26,16 +26,19 @@ Things yet to do:
     - description
     - careers
     - articles about specific things from that department?
-- Admissios
+- Admissions
   - the rich
   - family of Guild members
   - apprentices recommended by other guilds
   - outreach from Guild of Orphans and Lords Chancellor
 - Textarea: characters remaining?
 - Accordion menus
-
+- Fix hover/click stuff for mobile
+- handle CSS when window is SHORT, not just narrow
+- find a font that doesn't have teeeny punctuation
 
 
 
 DONE:
   - dropdown menu unfolding transition
+  - nice arms
