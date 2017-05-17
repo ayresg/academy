@@ -1,0 +1,123 @@
+/*------------------------------------*\
+  #PAGE-HEAD (Mobile menu)
+\*------------------------------------*/
+
+/* Menu variables --------------------*/
+$menu-base-height: calc(($mobile-menu-padding * 4) + $mobile-menu-title-size);
+$mobile-menu-title-size: 0.9em;
+$mobile-menu-margin: $margin / 2;
+$mobile-menu-padding: $padding / 2;
+$hamburger-dimension: $mobile-menu-title-size * 1.25;
+$hamburger-ratio: 0.15;
+
+/* Menu wrapper ----------------------*/
+.mobile-menu__wrapper { // visible only when screen is small enough
+  @media (min-width: $small-screen-threshold) { display: none; }
+  background-color: $dark-red;
+  min-height: $menu-base-height;
+}
+
+
+/* Title -----------------------------*/
+.menu__title {
+  // Font styling
+  color: $almost-white;
+  font-family: $heading-font-family;
+  font-size: $mobile-menu-title-size;
+  
+  // Layout
+  position: absolute;
+  left: 0;
+  padding: $mobile-menu-padding;
+  display: flex;
+  justify-content: space-between;
+  &>* { padding: $mobile-menu-padding; }
+}
+// itty bitty italics
+.menu__title--small { 
+  font-style: italic;
+  font-size: smaller;
+}
+
+/* Menu logistics --------------------*/
+.mobile-menu {
+  right: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Little goddamn hamburger menu -----*/
+.mobile-menu {
+  .mobile-menu__navicon {
+    // layout
+    align-self: flex-end;
+    // handle difference between this shape's actual and apparent sizes
+    margin: $mobile-menu-margin * 2;
+    margin-bottom: $mobile-menu-margin + $hamburger-dimension;
+    // main shape
+    background-color: $almost-white;
+    width:  $hamburger-dimension;
+    height: $hamburger-ratio * $hamburger-dimension;
+    border-radius: 10px;
+    // the shadows
+    box-shadow: 
+      0 0   $almost-white, 
+      0 2 * $hamburger-ratio * $hamburger-dimension $almost-white, 
+      0 4 * $hamburger-ratio * $hamburger-dimension $almost-white;
+  }
+  &:hover .mobile-menu__navicon {
+    background-color: $medium-grey;
+    box-shadow: 
+      0 2 * $hamburger-ratio * $hamburger-dimension $medium-grey, 
+      0 4 * $hamburger-ratio * $hamburger-dimension $medium-grey;
+  }
+}
+
+/* The list items themselves ---------*/
+.mobile-menu {
+  .mobile-menu__item {
+    // Font stuff
+    text-align: center;
+    font-family: $heading-font-family;
+    font-size: 0;
+    opacity: 0;
+    // Layout stuff
+    max-height: 0px;
+    width: 100vw;
+    padding: $mobile-menu-padding * 1.5;
+    // Colors and style
+    background-color: $dark-red;
+    border-top:    solid 0px lighten($dark-red, 10%);
+    border-bottom: solid 0px darken( $dark-red, 10%);
+    // Transition
+    transition: padding   1s,   max-height       1s, 
+                font-size 1s,   letter-spacing   1s, 
+                color     1s,   background-color 1s,
+                opacity 0.5s;
+  }
+  &:hover .mobile-menu__item {
+    border-top:    solid 1px lighten($dark-red, 10%);
+    border-bottom: solid 1px darken( $dark-red, 10%);
+    // Layout stuff
+    max-height: 9999999px;
+    font-size: large;
+    opacity: 1;
+  }
+  .mobile-menu__item:hover {
+    background-color: $dark-magenta;
+    letter-spacing: 1px;
+  }
+}
+
+/* Big, fancy navigation in menu -----*/
+.mobile-menu__primary { 
+  @extend .mobile-menu__item;
+  &:hover { background-color: yellow; }
+  @include link-coloring-self($pale-grey, $almost-white);
+}
+
+/* Small navigation in menu ----------*/
+.mobile-menu__secondary {
+  @extend .mobile-menu__item;
+  @include link-coloring-self($medium-grey, $almost-white);
+}

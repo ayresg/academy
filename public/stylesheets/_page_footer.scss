@@ -1,0 +1,29 @@
+/*------------------------------------*\
+  #PAGE-FOOTER
+\*------------------------------------*/
+
+/* Footer variables ------------------*/
+$footer-padding-percent: .25;
+$footer-text-color: $medium-grey;
+$footer-background-color: $dark-red;
+
+.footer__wrapper {
+  // Layout
+  width: 100vw;
+  margin-top: auto;
+  display: flex;
+  flex-direction: row;
+  padding: $padding;
+  // Change when it gets too small
+  @media(max-width: $small-screen-threshold) { flex-direction: column; }
+  
+  background-color: $footer-background-color;
+}
+
+.footer__item {
+  @include margin-padding-percent($footer-padding-percent);
+  @include link-coloring-descendents($pale-grey, $almost-white);
+  
+  font-size: smaller;
+  color: $footer-text-color;
+}

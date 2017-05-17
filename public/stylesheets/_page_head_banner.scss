@@ -1,0 +1,107 @@
+/*------------------------------------*\
+  #PAGE-HEAD (Banner)
+\*------------------------------------*/
+
+/* Banner variables */
+$min-banner-height: 30vw;
+
+/* Banner wrapper --------------------*/
+.banner { // visible only when screen is big enough
+  @media (max-width: $small-screen-threshold) { display: none; }
+  
+  // layout
+  @include min-size(100vw, $min-banner-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // background
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  // force objects to have a z-index, bringing them in front of gradients
+  * { position: relative; }
+  // gradient overlay
+  &:before {
+    position: absolute;
+    content: "";
+    @include min-size(100vw, $min-banner-height);
+    @include background-gradient($dark-red, $transparent, top, bottom);
+  }
+}
+
+
+/* Small upper navigation in banner --*/
+.banner__secondary {
+  // text styling
+  @include link-coloring-descendents($pale-grey, $almost-white);
+  font-size: small;
+  
+  // layout
+  padding: $padding;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  
+  // individual elements
+  li { @include margin-padding-horizontal(0.5 * $margin, 0.5 * $padding); }
+}
+
+
+/* Big, fancy navigation in banner ---*/
+.banner__primary {
+  // text stying
+  @include link-coloring-descendents($dark-red, 
+             saturate(lighten($dark-magenta, 8%), 60%));
+  @include cursive;
+  font-size: 3.5vw;
+  
+  // layout
+  padding-bottom: $padding;
+  padding-top: 4vw;
+  display: flex;
+  justify-content: space-around;
+  
+  // background gradient
+  @include background-gradient($background-color, $transparent, bottom, top);
+  
+  // individual elements
+  li { @include margin-padding-horizontal(0.5 * $margin, 0.5 * $padding); }
+}
+
+/* Masthead --------------------------*/
+.banner__masthead {
+  color: $almost-white;
+  @include margin-padding;
+  position: absolute;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  
+}
+
+/* Arms ------------------------------*/
+.banner__arms { // only display when screen is big enough
+  @media (max-width: $big-screen-threshold) { display: none; }
+  min-width: 76px;
+  margin-right: $margin * 2;
+}
+.banner__arms--light { fill:   $almost-white; }
+.banner__arms--dark  { stroke: $almost-white; }
+
+/* Title -----------------------------*/
+.banner__title {
+  font-family: $heading-font-family;
+  font-size: 6vw;
+}
+.banner__title__academy {
+  font-size: larger;
+}
+.banner__title__subtitle { 
+  display: flex;
+  justify-content: space-between;
+  font-size: 3vw; 
+}
+.banner__title__subtitle--small { 
+  font-style: italic;
+  font-size: smaller;
+}

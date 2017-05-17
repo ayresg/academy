@@ -35,6 +35,7 @@ Things yet to do:
 - Accordion menus
 - Fix hover/click stuff for mobile
 - handle CSS when window is SHORT, not just narrow
+- fix banner image heights (figure out how cropping and regexes and shit work)
 - find a font that doesn't have teeeny punctuation
 
 
