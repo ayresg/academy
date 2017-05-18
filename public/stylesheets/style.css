@@ -342,18 +342,18 @@ table {
 /* Footer variables ------------------*/
 /* line 10, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_footer.scss */
 .footer__wrapper {
-  width: 100vw;
-  margin-top: auto;
-  display: flex;
-  flex-direction: row;
   padding: 0.5em;
-  background-color: #341c27; }
+  margin-top: auto;
+  background-color: #341c27;
+  display: flex;
+  height: auto;
+  flex-shrink: 0; }
   @media (max-width: 550px) {
     /* line 10, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_footer.scss */
     .footer__wrapper {
       flex-direction: column; } }
 
-/* line 23, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_footer.scss */
+/* line 22, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_footer.scss */
 .footer__item {
   margin: 0.125em;
   padding: 0.125em;
