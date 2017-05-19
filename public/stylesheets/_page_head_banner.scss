@@ -4,9 +4,9 @@
 
 /* Banner variables */
 $min-banner-height: 30vw + $page-title-size * 2;
-$masthead-light: $very-pale-grey-blue;
 $banner-overlay-color: rgba($very-pale-grey-blue, 0.55);
-$masthead-width: 30vw;
+$masthead-light: rgba($very-pale-grey-blue, 0.75);
+$masthead-width: 40vw;
 
 /* Banner wrapper --------------------*/
 .banner { // visible only when screen is big enough
@@ -37,13 +37,17 @@ $masthead-width: 30vw;
   
   .banner__h1 {
     @include cursive;
-    background-color: $banner-overlay-color;
+    @include background-gradient($banner-overlay-color, $background-color, left, right);
     padding: $padding * .75;
     color: $dark-red;
   }
+  .banner__h1 + .banner__border,
+  .banner__filler--white + .banner__border {
+    @include background-gradient(transparent, $background-color, left, right);
+  }
 }
 
-.banner__filler { height: 6px; }
+.banner__border { height: 6px; }
 .banner__filler--white {
   height: 3vh;
   background-color: $background-color;
@@ -52,8 +56,6 @@ $masthead-width: 30vw;
 /* Big, fancy navigation in banner ---*/
 .banner__primary {
   // text stying
-  @include link-coloring-descendents($dark-red, 
-             saturate($dark-magenta, 60%));
   @include small-caps;
   text-transform: lowercase;
   font-size: 4vw;
@@ -66,19 +68,22 @@ $masthead-width: 30vw;
   align-items: center;
   // individual elements
   li {
+    a {@include link-coloring-self($dark-red, 
+             saturate($dark-magenta, 60%));}
     position: relative;
     flex: 1 1 auto;
     text-align: center;
   }
 }
 
+// make the ampersand a more reasonable size
+.banner__ampersand { font-size: smaller; }
+
+// the thing between the things
 .delimiter { 
   color: $dark-red;
-  font-size: 0.5em
-}
-
-.banner__ampersand {
-  font-size: smaller;
+  padding-top: 0.3em;
+  font-size: 0.5em;
 }
 
 /* Small upper navigation in banner --*/
@@ -100,7 +105,8 @@ $masthead-width: 30vw;
 /* Masthead --------------------------*/
 .banner__masthead {
   color: $masthead-light;
-  @include margin-padding;
+  @include margin-padding-percent(0.4);
+  margin-left: $margin * 1.5;
   position: absolute;
   display: flex;
   flex-flow: row nowrap;
@@ -110,6 +116,9 @@ $masthead-width: 30vw;
 
 /* Arms ------------------------------*/
 .banner__arms { // only display when screen is big enough
+  
+  display: none; // turn off the arms for now
+  
   @media (max-width: $big-screen-threshold) { display: none; }
   min-width: $masthead-width / 4;
   margin-right: $margin * 2;

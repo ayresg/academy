@@ -141,21 +141,27 @@ table {
   .banner .banner__h1 {
     font-family: "Im Fell English", cursive;
     font-style: italic;
-    background-color: rgba(178, 200, 221, 0.55);
+    background-image: linear-gradient(left, rgba(178, 200, 221, 0.55), #f0f3ff);
+    background-image: linear-gradient(to right, rgba(178, 200, 221, 0.55), #f0f3ff);
     padding: 0.375em;
     color: #341c27; }
+  /* line 44, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+  .banner .banner__h1 + .banner__border,
+  .banner .banner__filler--white + .banner__border {
+    background-image: linear-gradient(left, transparent, #f0f3ff);
+    background-image: linear-gradient(to right, transparent, #f0f3ff); }
 
-/* line 46, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
-.banner__filler {
+/* line 50, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+.banner__border {
   height: 6px; }
 
-/* line 47, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+/* line 51, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
 .banner__filler--white {
   height: 3vh;
   background-color: #f0f3ff; }
 
 /* Big, fancy navigation in banner ---*/
-/* line 53, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+/* line 57, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
 .banner__primary {
   font-family: "IM Fell English SC", serif;
   letter-spacing: 1.25;
@@ -167,30 +173,31 @@ table {
   padding: 0.125em;
   justify-content: space-around;
   align-items: center; }
-  /* line 98, /Users/gabeeayres/Sites/academy/public/stylesheets/_settings_tools.scss */
-  .banner__primary a, .banner__primarya, .banner__primary a * {
-    transition: color 0.5s;
-    color: #341c27; }
-    /* line 101, /Users/gabeeayres/Sites/academy/public/stylesheets/_settings_tools.scss */
-    .banner__primary a:hover, .banner__primarya:hover, .banner__primary a *:hover {
-      color: #7e002b; }
-  /* line 68, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+  /* line 70, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
   .banner__primary li {
     position: relative;
     flex: 1 1 auto;
     text-align: center; }
-
-/* line 75, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
-.delimiter {
-  color: #341c27;
-  font-size: 0.5em; }
+    /* line 71, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+    .banner__primary li a {
+      transition: color 0.5s;
+      color: #341c27; }
+      /* line 94, /Users/gabeeayres/Sites/academy/public/stylesheets/_settings_tools.scss */
+      .banner__primary li a:hover {
+        color: #7e002b; }
 
 /* line 80, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
 .banner__ampersand {
   font-size: smaller; }
 
+/* line 83, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+.delimiter {
+  color: #341c27;
+  padding-top: 0.3em;
+  font-size: 0.5em; }
+
 /* Small upper navigation in banner --*/
-/* line 85, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+/* line 90, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
 .banner__secondary {
   font-size: small;
   padding: 0.5em;
@@ -204,58 +211,60 @@ table {
     /* line 101, /Users/gabeeayres/Sites/academy/public/stylesheets/_settings_tools.scss */
     .banner__secondary a:hover, .banner__secondarya:hover, .banner__secondary a *:hover {
       color: #f0f3ff; }
-  /* line 97, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+  /* line 102, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
   .banner__secondary li {
     margin: 0 0.25em;
     padding: 0 0.25em; }
 
 /* Masthead --------------------------*/
-/* line 101, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+/* line 106, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
 .banner__masthead {
-  color: #b2c8dd;
-  margin: 0.5em;
-  padding: 0.5em;
+  color: rgba(178, 200, 221, 0.75);
+  margin: 0.2em;
+  padding: 0.2em;
+  margin-left: 0.75em;
   position: absolute;
   display: flex;
   flex-flow: row nowrap;
   align-items: flex-start; }
 
 /* Arms ------------------------------*/
-/* line 112, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+/* line 118, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
 .banner__arms {
-  min-width: 7.5vw;
+  display: none;
+  min-width: 10vw;
   margin-right: 1em; }
   @media (max-width: 700px) {
-    /* line 112, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+    /* line 118, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
     .banner__arms {
       display: none; } }
 
-/* line 117, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+/* line 126, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
 .banner__arms--light {
-  fill: #b2c8dd; }
+  fill: rgba(178, 200, 221, 0.75); }
 
-/* line 118, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+/* line 127, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
 .banner__arms--dark {
-  stroke: #b2c8dd;
+  stroke: rgba(178, 200, 221, 0.75);
   fill: #0d0f0e; }
 
 /* Title -----------------------------*/
-/* line 124, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+/* line 133, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
 .banner__title {
   font-family: "Im Fell English", serif;
-  font-size: 3.75vw; }
+  font-size: 5vw; }
 
-/* line 128, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+/* line 137, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
 .banner__title__academy {
   font-size: larger; }
 
-/* line 131, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+/* line 140, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
 .banner__title__subtitle {
   display: flex;
   justify-content: space-between;
-  font-size: 1.875vw; }
+  font-size: 2.5vw; }
 
-/* line 136, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+/* line 145, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
 .banner__title__subtitle--small {
   font-style: italic;
   font-size: smaller; }

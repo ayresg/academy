@@ -14,11 +14,14 @@
   <!-- Links -->
   <link rel="stylesheet" type="text/css" href="/public/stylesheets/style.css">
   <link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Cutive+Mono|Ek+Mukta:300|IM+Fell+English:400,400i" rel="stylesheet">
+  <!-- Scripts -->
 
 </head>
 
 
 <body class="typography">
+ <div class="testing"></div>
+ 
   <!-- Big header and navbar and everything  -->
   <header class="banner" style="background-image: url('/public/images/banners/dramatic_yellow_clock.jpg')">
       
@@ -29,6 +32,7 @@
         <li><a href="<%= url('/guild') %>">Guild</a></li>
         <li><a href="<%= url('/visitors') %>">Visitors</a></li>
       </ul>
+      
       <a href="<%= url('/') %>" class="banner__masthead" >
         <!--Logo-->
         <div class="banner__arms">
@@ -48,20 +52,26 @@
       </a>
 
       <!-- Primary Navbar (big) -->
-      <ul class="plain-list banner__primary">
+      <ul  class="plain-list banner__primary">
         <li><a href="<%= url('/academics') %>">Academics</a></li>
-        <div class="delimiter" aria-hiddine="true">&#10070;</div>
-        <li><a href="<%= url('/admissions') %>">Admissions <span class="banner__ampersand">&amp;</span> Aid</a></li>
-        <div class="delimiter" aria-hiddine="true">&#10070;</div>
+        <div class="delimiter" aria-hiddine="true">
+        &#10070;
+        </div>
+       <li><a href="">Admissions <span class="banner__ampersand">&amp;</span> Aid</a></li>
+        <div class="delimiter" aria-hiddine="true">
+        &#10070;
+        </div>
         <li><a href="<%= url('/student-life') %>">Student Life</a></li>
-        <div class="delimiter" aria-hiddine="true">&#10070;</div>
+        <div class="delimiter" aria-hiddine="true">
+        &#10070;
+        </div>
         <li><a href="<%= url('/about') %>">About</a></li>
       </ul>
-      <div class="banner__filler"></div>
+      <div class="banner__border"></div>
       <div class="banner__filler--white"></div>
-      <div class="banner__filler"></div>
-      <h1 class="banner__h1">Welcome to the Academy</h1>
-      <div class="banner__filler"></div>
+      <div class="banner__border"></div>
+      <h1  class="banner__h1">Welcome to the Academy</h1>
+      <div class="banner__border"></div>
     </header>
 <!--  </nav>-->
 

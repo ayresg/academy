@@ -28,6 +28,8 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Cutive+Mono|Ek+Mukta:300|IM+Fell+English:400,400i" rel="stylesheet">
+    
+    <!-- Scripts -->
 
 </head>
 
@@ -65,19 +67,18 @@
       <ul class="plain-list banner__primary">
         <li><a href="<%= url('/academics') %>">Academics</a></li>
         <div class="delimiter" aria-hiddine="true">&#10070;</div>
-        <li><a href="<%= url('/admissions') %>">Admissions &amp; Aid</a></li>
+        <li><a href="">Admissions <span class="banner__ampersand">&amp;</span> Aid</a></li>
         <div class="delimiter" aria-hiddine="true">&#10070;</div>
         <li><a href="<%= url('/student-life') %>"> Student Life</a></li>
         <div class="delimiter" aria-hiddine="true">&#10070;</div>
         <li><a href="<%= url('/about') %>">About</a></li>
       </ul>
-      <div class="banner__filler"></div>
+      <div class="banner__border"></div>
       <div class="banner__filler--white"></div>
-      <div class="banner__filler"></div>
-      <h1 class="banner__h1"><%= @title %></h1>
-      <div class="banner__filler"></div>
+      <div class="banner__border"></div>
+      <h1  class="banner__h1"><%= @title %></h1>
+      <div class="banner__border"></div>
     </header>
-<!--  </nav>-->
 
   <!-- Small Header and Navbar (Primary & Secondary) -->
   <header class="mobile-menu__wrapper">
