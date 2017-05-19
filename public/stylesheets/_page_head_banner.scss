@@ -3,7 +3,8 @@
 \*------------------------------------*/
 
 /* Banner variables */
-$min-banner-height: 30vw;
+$min-banner-height: 30vw + $page-title-size * 2;
+$masthead-light: $very-pale-grey-blue;
 
 /* Banner wrapper --------------------*/
 .banner { // visible only when screen is big enough
@@ -13,7 +14,7 @@ $min-banner-height: 30vw;
   @include min-size(100vw, $min-banner-height);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   // background
   background-repeat: no-repeat;
   background-size: cover;
@@ -25,7 +26,15 @@ $min-banner-height: 30vw;
     position: absolute;
     content: "";
     @include min-size(100vw, $min-banner-height);
-    @include background-gradient($dark-red, $transparent, top, bottom);
+    
+    background-image: linear-gradient(
+      rgba($dark-red, 0.8),
+//      rgba($pale-grey-purple, 0.7) 40%,
+      rgba($pale-grey-blue, 0.8) 60%, $medium-grey);
+  }
+  
+  .h1 { 
+    background-color: transparent; 
   }
 }
 
@@ -33,7 +42,7 @@ $min-banner-height: 30vw;
 /* Small upper navigation in banner --*/
 .banner__secondary {
   // text styling
-  @include link-coloring-descendents($pale-grey, $almost-white);
+  @include link-coloring-descendents($very-pale-grey-blue, $almost-white);
   font-size: small;
   
   // layout
@@ -51,26 +60,35 @@ $min-banner-height: 30vw;
 .banner__primary {
   // text stying
   @include link-coloring-descendents($dark-red, 
-             saturate(lighten($dark-magenta, 8%), 60%));
-  @include cursive;
-  font-size: 3.5vw;
+             saturate($dark-magenta, 60%));
+  @include small-caps;
+  font-size: 3.8vw;
+  
+  background-color: rgba($very-pale-grey-blue, 0.4);
   
   // layout
-  padding-bottom: $padding;
-  padding-top: 4vw;
+  margin-top: auto;
   display: flex;
+  padding: $padding / 2;
   justify-content: space-around;
-  
-  // background gradient
-  @include background-gradient($background-color, $transparent, bottom, top);
-  
+//  flex: 1;
+  align-items: center;
   // individual elements
-  li { @include margin-padding-horizontal(0.5 * $margin, 0.5 * $padding); }
+  li {
+    position: relative;
+    flex: 1 1 auto;
+    text-align: center;
+  }
+  
+  .delimiter { 
+    color: $dark-red;
+    font-size: small;
+  }
 }
 
 /* Masthead --------------------------*/
 .banner__masthead {
-  color: $almost-white;
+  color: $masthead-light;
   @include margin-padding;
   position: absolute;
   display: flex;
@@ -85,12 +103,15 @@ $min-banner-height: 30vw;
   min-width: 76px;
   margin-right: $margin * 2;
 }
-.banner__arms--light { fill:   $almost-white; }
-.banner__arms--dark  { stroke: $almost-white; }
+.banner__arms--light { fill:   $masthead-light; }
+.banner__arms--dark  { 
+  stroke: $masthead-light; 
+  fill: $almost-black;
+}
 
 /* Title -----------------------------*/
 .banner__title {
-  font-family: $heading-font-family;
+  font-family: $fancy-font, serif;
   font-size: 6vw;
 }
 .banner__title__academy {

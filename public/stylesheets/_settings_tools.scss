@@ -3,7 +3,6 @@
 \*------------------------------------*/
 
 /* Neutrals --------------------------*/
-$transparent: rgba(0, 0, 0, 0);
 $almost-white: rgb(240, 243, 255);
 $pale-grey: rgb(180, 183, 190);
 $medium-grey: rgb(130, 139, 155);
@@ -13,6 +12,11 @@ $almost-black: rgb(13, 15, 14);
 $dark-red: rgb(52, 28, 39);
 $dark-magenta: rgb(98, 28, 52);
 
+/* Blues -----------------------------*/
+$pale-grey-blue: rgb(110, 143, 190);
+$very-pale-grey-blue: lighten($pale-grey-blue, 20%);
+$pale-grey-purple: rgb(135, 143, 190);
+
 
 /*------------------------------------*\
   #COLORS (semantic)
@@ -20,6 +24,7 @@ $dark-magenta: rgb(98, 28, 52);
 
 // Background
 $background-color: $almost-white;
+$page-title-color: $medium-grey;
 
 // Regular colors
 $base-font-color: $almost-black;
@@ -39,22 +44,25 @@ $fancy-font: "Im Fell English";
 
 // Base
 $base-font-family: "Ek Mukta", sans-serif;
-$base-font-size: 18px;
-$base-line-height: 1.2;
+$base-font-size: 1.1em;
+$base-line-height: 1.35;
 
 // Heading
-$heading-font-family: $fancy-font, serif;
+$heading-font-family: "Im Fell English", serif;
 $heading-font-weight: 400;
+$page-title-size: 5vw;
 
 // Other
 $fixed-font-family: "Cultive Mono", monospace;
 $fixed-font-size: $base-font-size;
-$fixed-line-height: 1.2;
+$fixed-line-height: 1.25;
+$small-caps-font-family: "Im Fell English SC", serif;
+$small-caps-letter-spacing: 1.25;
 
 
 /* Layout ----------------------------*/
 $margin: 0.5em;
-$padding: $margin;
+$padding: 0.5em;
 $tiny-screen-threshold: 300px;
 $small-screen-threshold: 550px;  
 $big-screen-threshold: 700px;
@@ -69,6 +77,11 @@ $big-screen-threshold: 700px;
 @mixin cursive {
   font-family: $fancy-font, cursive;
   font-style: italic;
+}
+
+@mixin small-caps {
+  font-family: $small-caps-font-family;
+  letter-spacing: $small-caps-letter-spacing;
 }
 
 /* Links -----------------------------*/

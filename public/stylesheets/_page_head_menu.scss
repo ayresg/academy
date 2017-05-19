@@ -22,7 +22,7 @@ $hamburger-ratio: 0.15;
 .menu__title {
   // Font styling
   color: $almost-white;
-  font-family: $heading-font-family;
+  font-family: $fancy-font, serif;
   font-size: $mobile-menu-title-size;
   
   // Layout
@@ -41,6 +41,8 @@ $hamburger-ratio: 0.15;
 
 /* Menu logistics --------------------*/
 .mobile-menu {
+  position: relative;
+  z-index: 1;
   right: 0;
   display: flex;
   flex-direction: column;
@@ -78,7 +80,7 @@ $hamburger-ratio: 0.15;
   .mobile-menu__item {
     // Font stuff
     text-align: center;
-    font-family: $heading-font-family;
+    font-family: $fancy-font, serif;
     font-size: 0;
     opacity: 0;
     // Layout stuff
