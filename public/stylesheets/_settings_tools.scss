@@ -13,7 +13,7 @@ $dark-red: rgb(52, 28, 39);
 $dark-magenta: rgb(98, 28, 52);
 
 /* Blues -----------------------------*/
-$pale-grey-blue: rgb(110, 143, 190);
+$pale-grey-blue: rgb(107, 150, 190);
 $very-pale-grey-blue: lighten($pale-grey-blue, 20%);
 $pale-grey-purple: rgb(135, 143, 190);
 
@@ -56,13 +56,16 @@ $page-title-size: 5vw;
 $fixed-font-family: "Cultive Mono", monospace;
 $fixed-font-size: $base-font-size;
 $fixed-line-height: 1.25;
-$small-caps-font-family: "Im Fell English SC", serif;
+$small-caps-font-family: "IM Fell English SC", serif;
 $small-caps-letter-spacing: 1.25;
 
 
 /* Layout ----------------------------*/
 $margin: 0.5em;
 $padding: 0.5em;
+
+$banner-border-width: 3px;
+
 $tiny-screen-threshold: 300px;
 $small-screen-threshold: 550px;  
 $big-screen-threshold: 700px;
@@ -126,6 +129,17 @@ $big-screen-threshold: 700px;
 @mixin margin-padding-vertical-percent($p) {
   margin:   $margin * $p 0;
   padding: $padding * $p 0;
+}
+
+/* Borders ---------------------------*/
+@mixin border-vertical($width, $style, $color) {
+  border-top:    $width $style $color;
+  border-bottom: $width $style $color;
+}
+
+@mixin border-horizontal($width, $style, $color) {
+  border-left:  $width $style $color;
+  border-right: $width $style $color;
 }
 
 /* Indentation -----------------------*/

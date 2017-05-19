@@ -50,17 +50,13 @@
   color: $dark-red;
   
 //  border-top: 1px solid $dark-red;
-  background-color: $pale-grey;
-  border-bottom: 1px solid $dark-red;
+//  background-color: $pale-grey;
+//  border-bottom: 1px solid $dark-red;
 }
 .h1 { 
-  @include cursive;
-  font-size: $page-title-size; 
-  background-color: $page-title-color;
+//  @include cursive;
+  font-size: $page-title-size;
   color: $dark-magenta;
-  padding: $padding;
-  
-    border-bottom: 1px solid $dark-red;
 }
 .h2 { font-size: 4.5vw; }
 .h3 { font-size: 3.5vw; }

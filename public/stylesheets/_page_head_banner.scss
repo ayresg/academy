@@ -5,6 +5,8 @@
 /* Banner variables */
 $min-banner-height: 30vw + $page-title-size * 2;
 $masthead-light: $very-pale-grey-blue;
+$banner-overlay-color: rgba($very-pale-grey-blue, 0.55);
+$masthead-width: 30vw;
 
 /* Banner wrapper --------------------*/
 .banner { // visible only when screen is big enough
@@ -30,14 +32,54 @@ $masthead-light: $very-pale-grey-blue;
     background-image: linear-gradient(
       rgba($dark-red, 0.8),
 //      rgba($pale-grey-purple, 0.7) 40%,
-      rgba($pale-grey-blue, 0.8) 60%, $medium-grey);
+      rgba($pale-grey-blue, 0.6) 60%, rgba($pale-grey-blue, 0.7));
   }
   
-  .h1 { 
-    background-color: transparent; 
+  .banner__h1 {
+    @include cursive;
+    background-color: $banner-overlay-color;
+    padding: $padding * .75;
+    color: $dark-red;
   }
 }
 
+.banner__filler { height: 6px; }
+.banner__filler--white {
+  height: 3vh;
+  background-color: $background-color;
+}
+
+/* Big, fancy navigation in banner ---*/
+.banner__primary {
+  // text stying
+  @include link-coloring-descendents($dark-red, 
+             saturate($dark-magenta, 60%));
+  @include small-caps;
+  text-transform: lowercase;
+  font-size: 4vw;
+  background-color: $banner-overlay-color;
+  // layout
+  margin-top: auto;
+  display: flex;
+  padding: $padding / 4;
+  justify-content: space-around;
+  align-items: center;
+  // individual elements
+  li {
+    position: relative;
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}
+
+.delimiter { 
+  color: $dark-red;
+  font-size: 0.5em
+}
+
+.banner__ampersand {
+  font-size: smaller;
+}
 
 /* Small upper navigation in banner --*/
 .banner__secondary {
@@ -55,37 +97,6 @@ $masthead-light: $very-pale-grey-blue;
   li { @include margin-padding-horizontal(0.5 * $margin, 0.5 * $padding); }
 }
 
-
-/* Big, fancy navigation in banner ---*/
-.banner__primary {
-  // text stying
-  @include link-coloring-descendents($dark-red, 
-             saturate($dark-magenta, 60%));
-  @include small-caps;
-  font-size: 3.8vw;
-  
-  background-color: rgba($very-pale-grey-blue, 0.4);
-  
-  // layout
-  margin-top: auto;
-  display: flex;
-  padding: $padding / 2;
-  justify-content: space-around;
-//  flex: 1;
-  align-items: center;
-  // individual elements
-  li {
-    position: relative;
-    flex: 1 1 auto;
-    text-align: center;
-  }
-  
-  .delimiter { 
-    color: $dark-red;
-    font-size: small;
-  }
-}
-
 /* Masthead --------------------------*/
 .banner__masthead {
   color: $masthead-light;
@@ -93,14 +104,14 @@ $masthead-light: $very-pale-grey-blue;
   position: absolute;
   display: flex;
   flex-flow: row nowrap;
-  align-items: center;
+  align-items: flex-start;
   
 }
 
 /* Arms ------------------------------*/
 .banner__arms { // only display when screen is big enough
   @media (max-width: $big-screen-threshold) { display: none; }
-  min-width: 76px;
+  min-width: $masthead-width / 4;
   margin-right: $margin * 2;
 }
 .banner__arms--light { fill:   $masthead-light; }
@@ -112,7 +123,7 @@ $masthead-light: $very-pale-grey-blue;
 /* Title -----------------------------*/
 .banner__title {
   font-family: $fancy-font, serif;
-  font-size: 6vw;
+  font-size: $masthead-width / 8;
 }
 .banner__title__academy {
   font-size: larger;
@@ -120,7 +131,7 @@ $masthead-light: $very-pale-grey-blue;
 .banner__title__subtitle { 
   display: flex;
   justify-content: space-between;
-  font-size: 3vw; 
+  font-size: $masthead-width / 16;
 }
 .banner__title__subtitle--small { 
   font-style: italic;
