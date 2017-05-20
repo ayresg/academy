@@ -1,0 +1,27 @@
+/*------------------------------------*\
+  #HEADINGS
+\*------------------------------------*/
+
+.h2, .h3, .h4, .h5, .h6 {
+//  margin-bottom: $margin;
+  margin-top: $margin;
+  font-family: $heading-font-family;
+  font-weight: $heading-font-weight;
+  color: $dark-red;
+}
+
+.h2 {
+  @include heading-background($very-pale-grey-blue, 80%,$medium-grey, 3px, $dark-red);
+  @include cursive;
+  font-size: 1.4em;
+}
+
+.h3 {
+  @include heading-background(desaturate($very-pale-grey-blue, 15%), 60%, $medium-grey, 3px, darken($medium-grey, 15%));
+  font-size: 1em;
+  border-left: 3px solid $medium-grey;
+  margin-left: -3px;
+}
+
+.h4 { font-size: 2.5vw; }
+.h5 { font-size: 1.5vw; }

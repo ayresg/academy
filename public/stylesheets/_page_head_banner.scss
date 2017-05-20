@@ -3,7 +3,8 @@
 \*------------------------------------*/
 
 /* Banner variables */
-$min-banner-height: 30vw + $page-title-size * 2;
+$banner-title-size: 5vw;
+$min-banner-height: 30vw + $banner-title-size * 2;
 $banner-overlay-color: rgba($very-pale-grey-blue, 0.55);
 $masthead-light: rgba($very-pale-grey-blue, 0.75);
 $masthead-width: 40vw;
@@ -23,6 +24,7 @@ $masthead-width: 40vw;
   
   // force objects to have a z-index, bringing them in front of gradients
   * { position: relative; }
+  
   // gradient overlay
   &:before {
     position: absolute;
@@ -31,27 +33,33 @@ $masthead-width: 40vw;
     
     background-image: linear-gradient(
       rgba($dark-red, 0.8),
-//      rgba($pale-grey-purple, 0.7) 40%,
-      rgba($pale-grey-blue, 0.6) 60%, rgba($pale-grey-blue, 0.7));
+      rgba($pale-grey-blue, 0.6) 60%,
+      rgba($pale-grey-blue, 0.7));
   }
-  
-  .banner__h1 {
+}
+
+
+/* Page title header -----------------*/
+.banner__h1 {
     @include cursive;
     @include background-gradient($banner-overlay-color, $background-color, left, right);
     padding: $padding * .75;
     color: $dark-red;
+    font-size: $banner-title-size;
   }
-  .banner__h1 + .banner__border,
-  .banner__filler--white + .banner__border {
+.banner__border { height: $banner-border-width; }
+.banner__h1 + .banner__border,
+.banner__filler--white + .banner__border {
     @include background-gradient(transparent, $background-color, left, right);
   }
-}
 
-.banner__border { height: 6px; }
+
+/* Banner padding styling --*/
 .banner__filler--white {
-  height: 3vh;
+  height: 3vw;
   background-color: $background-color;
 }
+
 
 /* Big, fancy navigation in banner ---*/
 .banner__primary {
@@ -86,6 +94,7 @@ $masthead-width: 40vw;
   font-size: 0.5em;
 }
 
+
 /* Small upper navigation in banner --*/
 .banner__secondary {
   // text styling
@@ -102,6 +111,7 @@ $masthead-width: 40vw;
   li { @include margin-padding-horizontal(0.5 * $margin, 0.5 * $padding); }
 }
 
+
 /* Masthead --------------------------*/
 .banner__masthead {
   color: $masthead-light;
@@ -113,6 +123,7 @@ $masthead-width: 40vw;
   align-items: flex-start;
   
 }
+
 
 /* Arms ------------------------------*/
 .banner__arms { // only display when screen is big enough
@@ -128,6 +139,7 @@ $masthead-width: 40vw;
   stroke: $masthead-light; 
   fill: $almost-black;
 }
+
 
 /* Title -----------------------------*/
 .banner__title {

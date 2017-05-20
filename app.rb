@@ -24,6 +24,8 @@ get '/departments/:dept' do |dept|
   @dept = Department.find_by_page_address(dept)
   if @dept
     @image = @dept.header_image_name
+    @title = @dept.name
+    dept == "riddles" ? { } : @title = "Department of " + @title
     erb :"/departments/#{@dept.page_address}"
   else
     halt 404, "That's not a department here."

@@ -50,7 +50,6 @@ $base-line-height: 1.35;
 // Heading
 $heading-font-family: "Im Fell English", serif;
 $heading-font-weight: 400;
-$page-title-size: 5vw;
 
 // Other
 $fixed-font-family: "Cultive Mono", monospace;
@@ -64,7 +63,7 @@ $small-caps-letter-spacing: 1.25;
 $margin: 0.5em;
 $padding: 0.5em;
 
-$banner-border-width: 3px;
+$banner-border-width: 6px;
 
 $tiny-screen-threshold: 300px;
 $small-screen-threshold: 550px;  
@@ -87,6 +86,7 @@ $big-screen-threshold: 700px;
   letter-spacing: $small-caps-letter-spacing;
 }
 
+
 /* Links -----------------------------*/
 @mixin link-coloring-self($base, $hover:'-1', $visited:'-1') {
     transition: color 0.5s;
@@ -102,6 +102,7 @@ $big-screen-threshold: 700px;
     @if $visited != '-1' { &:visited { color: $visited; } }
   }
 }
+
 
 /* Margins & Padding -----------------*/
 @mixin margin-padding($m:$margin, $p:$padding) {
@@ -131,6 +132,7 @@ $big-screen-threshold: 700px;
   padding: $padding * $p 0;
 }
 
+
 /* Borders ---------------------------*/
 @mixin border-vertical($width, $style, $color) {
   border-top:    $width $style $color;
@@ -142,6 +144,7 @@ $big-screen-threshold: 700px;
   border-right: $width $style $color;
 }
 
+
 /* Indentation -----------------------*/
 @mixin indent { padding-left: 2rem; }
 
@@ -149,6 +152,12 @@ $big-screen-threshold: 700px;
 /* Sizing ----------------------------*/
 @mixin max-size($w, $h) { max-width: $w; max-height: $h; }
 @mixin min-size($w:100%, $h:100%) { min-width: $w; min-height: $h; }
+@mixin pseudo-fill {
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  content: "";
+}
 
 
 /* Gradients -------------------------*/
@@ -156,3 +165,21 @@ $big-screen-threshold: 700px;
   background-image: linear-gradient($origin, $base-color, $other-color);
   background-image: linear-gradient(to $destination, $base-color, $other-color);
 }
+
+@mixin heading-background($bg-color, $bg-percent, $border-color, $border-width, $text-color) {
+  @media (min-width: $small-screen-threshold) {
+    @include background-gradient(transparent, $background-color $bg-percent, left, right);
+  }
+  color: $text-color;
+  padding: $padding;
+  position: relative;
+  
+  &:before {
+    @include border-vertical($border-width, solid, $border-color);
+    @include pseudo-fill;
+    margin: -1 * $padding;
+    z-index: -1;
+    background-color: $bg-color;
+  }
+}
+

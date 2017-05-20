@@ -31,37 +31,11 @@
 @import "page_head_banner";
 @import "page_head_menu"; 
 @import "page_footer";
+@import "headers";
 
 /*------------------------------------*\
   #BASE
 \*------------------------------------*/
-
-/* Headings  -------------------------*/
-.heading {
-  
-}
-
-.h2, .h3, .h4, .h5, .h6 {
-  padding: $padding / 2;
-  margin: $margin / 2 0;
-  
-  font-family: $heading-font-family;
-  font-weight: $heading-font-weight;
-  color: $dark-red;
-  
-//  border-top: 1px solid $dark-red;
-//  background-color: $pale-grey;
-//  border-bottom: 1px solid $dark-red;
-}
-.h1 { 
-//  @include cursive;
-  font-size: $page-title-size;
-  color: $dark-magenta;
-}
-.h2 { font-size: 4.5vw; }
-.h3 { font-size: 3.5vw; }
-.h4 { font-size: 2.5vw; }
-.h5 { font-size: 1.5vw; }
 
 /* Font styling-----------------------*/
 .quiet { color: $quiet-color; }
@@ -78,6 +52,7 @@
 .main .link { @include link-coloring-self($link-color, 
                                           $link-color-hover, 
                                           $link-color-visited) }
+
 
 /* Layout ----------------------------*/
 .page {
@@ -103,8 +78,12 @@
 
 /* Elements --------------------------*/
 .image { @include max-size(100%, 100%); }
-.main  { @include margin-padding; }
-.p { margin-bottom: 1em; }
+.p, .section { /* empty */ }
+.p, .unordered-list, .ordered-list {
+  @include margin-padding;
+  margin-top: none;
+  padding-top: none;
+}
 
 /*------------------------------------*\
   #TYPOGRAPHY WRAPPER CLASS
@@ -116,7 +95,7 @@
     
   b, strong { @extend .bold; }
  
-  h1, .h1 { @extend .h1; }
+  // h1, .h1 { @extend .h1; }
   h2, .h2 { @extend .h2; }
   h3, .h3 { @extend .h3; }
   h4, .h4 { @extend .h4; }
@@ -132,7 +111,8 @@
   cite      { @extend .italic; }
   img       { @extend .image; }
   main      { @extend .main; }
-  p         { @extend .p;}
+  p         { @extend .p; }
+  section   { @extend .section; }
 }
 
 /*------------------------------------*\

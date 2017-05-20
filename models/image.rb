@@ -1,9 +1,12 @@
+
 # models/image.rb
 class Image < ActiveRecord::Base
   @@license_links = {
       'CC0' => 'https://creativecommons.org/publicdomain/zero/1.0/',
       'CC BY-SA 2.0' => 'https://creativecommons.org/licenses/by-sa/2.0/'
       }
+  
+  # generate the pretty citation for this image
   def attribution
     title = name && !name.empty? ? "<cite>#{name}</cite>" : "Photo"
     licensing_info = 
@@ -15,4 +18,5 @@ class Image < ActiveRecord::Base
     "<a href='#{image_address}'>#{title}</a> by 
     <a href='#{author_address}'>#{author_name}</a>#{licensing_info}</a>"
   end
+  
 end
