@@ -13,9 +13,10 @@ Things yet to do:
   - find place on website for it
   - handle attributions
 - Paths (ex. Departments > Alchemy > Courses)
+- Dept of Riddles should require you to solve ~url riddles~ before you can find the pages
+- dept of poor labeling should have all the pages and links mislabeled
 - Header stuff
   - decide on breakpoints and behavior
-  - spruce up small headers (images? borders? gradients?)
 - Academics: degrees offered, majors, programs, etc., NOT just departments
   - apprentice, journeyman, master?
   - study abroad
@@ -34,10 +35,11 @@ Things yet to do:
 - Accordion menus
 - Fix hover/click stuff for mobile
 - handle CSS when window is SHORT, not just narrow
-- fix banner image heights (figure out how cropping and regexes and shit work)
-- Handle header text being too big for the screen
+- Handle header text being too big for the screen on mobile
   - may require comparing vw/vh and ems
 - Make layout pretty
+- Make small menu with background pretty
+- Find better portrait shots of the banners
 
 
 DONE:
@@ -45,3 +47,5 @@ DONE:
   - nice arms
   - Footer layout for different screen sizes (if small, switch to column)
   - find a font that doesn't have teeeny punctuation
+- fix banner image heights (figure out how cropping and regexes and shit work)
+  - spruce up small headers (images? borders? gradients?)

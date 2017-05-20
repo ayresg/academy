@@ -3,123 +3,260 @@
 \*------------------------------------*/
 
 /* Menu variables --------------------*/
-$menu-base-height: calc(($mobile-menu-padding * 4) + $mobile-menu-title-size);
-$mobile-menu-title-size: 0.9em;
+$mobile-menu-base-height: calc(($mobile-menu-padding * 4) + $mobile-menu-title-size);
+$mobile-menu-masthead-size: 4vw;
+$mobile-menu-title-size: 1.5em;
+
 $mobile-menu-margin: $margin / 2;
 $mobile-menu-padding: $padding / 2;
-$hamburger-dimension: $mobile-menu-title-size * 1.25;
-$hamburger-ratio: 0.15;
+$mobile-menu-border-width: 4px;
+
+$menu-overlay-color: rgba($very-pale-grey-blue, 0.55);
+
+$hamburger-dimension: 1.5em;
+$hamburger-ratio: 0.2;
+
+
+/*----------------------------------------------------------------------------*\
+  Wrappers
+\*----------------------------------------------------------------------------*/
 
 /* Menu wrapper ----------------------*/
 .mobile-menu__wrapper { // visible only when screen is small enough
   @media (min-width: $small-screen-threshold) { display: none; }
   background-color: $dark-red;
-  min-height: $menu-base-height;
-}
-
-
-/* Title -----------------------------*/
-.menu__title {
-  // Font styling
-  color: $almost-white;
-  font-family: $fancy-font, serif;
-  font-size: $mobile-menu-title-size;
   
-  // Layout
-  position: absolute;
-  left: 0;
-  padding: $mobile-menu-padding;
-  display: flex;
-  justify-content: space-between;
-  &>* { padding: $mobile-menu-padding; }
-}
-// itty bitty italics
-.menu__title--small { 
-  font-style: italic;
-  font-size: smaller;
+  // background
+  background-repeat: no-repeat;
+  background-size:auto;
+  
+  // force objects to have a z-index, bringing them in front of gradients
+  * { position: relative; }
+  position: relative;
+  
+  // gradient overlay
+  &:before {
+    position: absolute;
+    content: "";
+    @include min-size(100%, 100%);
+    
+    background-image: linear-gradient(
+      rgba($dark-red, 0.8),
+      rgba($pale-grey-blue, 0.8));
+  }
+  
 }
 
-/* Menu logistics --------------------*/
+/* Dropdown menu wrapper -------------*/
 .mobile-menu {
   position: relative;
   z-index: 1;
-  right: 0;
+  margin-left: auto;
   display: flex;
   flex-direction: column;
 }
 
-/* Little goddamn hamburger menu -----*/
-.mobile-menu {
-  .mobile-menu__navicon {
-    // layout
-    align-self: flex-end;
-    // handle difference between this shape's actual and apparent sizes
-    margin: $mobile-menu-margin * 2;
-    margin-bottom: $mobile-menu-margin + $hamburger-dimension;
+
+
+
+/*----------------------------------------------------------------------------*\
+  Mobile title style
+\*----------------------------------------------------------------------------*/
+
+/* Page title header -----------------*/
+.menu__h1 {
+  @include cursive;
+  padding: $padding * .75;
+  margin-bottom: $mobile-menu-border-width;
+  background-color: $menu-overlay-color;
+  
+  color: $dark-red;
+  font-size: $mobile-menu-title-size;
+  }
+
+/* Banner padding styling ------------*/
+.menu__filler--white {
+//  height: 6px;
+  background-color: $background-color;
+}
+
+
+
+/*----------------------------------------------------------------------------*\
+  Masthead stuff
+\*----------------------------------------------------------------------------*/
+
+/* Menu header -----------------------*/
+.menu__masthead__wrapper {
+  min-height: $mobile-menu-base-height;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  
+  &>div, &>label {
+    margin: $margin;
+  }
+}
+
+/* Masthead --------------------------*/
+.menu__masthead {
+  // Font styling
+  color: $almost-white;
+  font-family: $fancy-font, serif;
+  font-size: $mobile-menu-masthead-size;
+  
+  // Layout
+//  padding: $mobile-menu-padding;
+  margin-top: 0.1em;
+  
+  display: flex;
+  justify-content: space-between;
+  &>* { padding: $mobile-menu-padding; }
+  align-items: baseline;
+}
+
+// itty bitty italics
+.menu__masthead--small { 
+  font-style: italic;
+  font-size: smaller;
+  padding-right: $mobile-menu-padding + 0.1em;
+}
+
+
+
+/*----------------------------------------------------------------------------*\
+  Navicon (hamburger menu button)
+\*----------------------------------------------------------------------------*/
+/* Navicon wrapper -------------------*/
+.mobile-menu__navicon__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* Menu label ------------------------*/
+.mobile-menu__label {
+  color: $very-pale-grey-blue;
+  font-size: $hamburger-dimension / 2;
+}
+/* Icon itself -----------------------*/
+.mobile-menu__navicon {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width:  $hamburger-dimension * $hamburger-ratio * 7;
+  height: $hamburger-dimension;
+  // the visible part
+  &:before {
+    content: "";
+    position: absolute;
     // main shape
     background-color: $almost-white;
-    width:  $hamburger-dimension;
+    width: 100%;
     height: $hamburger-ratio * $hamburger-dimension;
     border-radius: 10px;
     // the shadows
     box-shadow: 
       0 0   $almost-white, 
       0 2 * $hamburger-ratio * $hamburger-dimension $almost-white, 
-      0 4 * $hamburger-ratio * $hamburger-dimension $almost-white;
-  }
-  &:hover .mobile-menu__navicon {
-    background-color: $medium-grey;
-    box-shadow: 
-      0 2 * $hamburger-ratio * $hamburger-dimension $medium-grey, 
-      0 4 * $hamburger-ratio * $hamburger-dimension $medium-grey;
+      0 -2 * $hamburger-ratio * $hamburger-dimension $almost-white;
   }
 }
 
-/* The list items themselves ---------*/
-.mobile-menu {
-  .mobile-menu__item {
-    // Font stuff
-    text-align: center;
-    font-family: $fancy-font, serif;
-    font-size: 0;
-    opacity: 0;
-    // Layout stuff
-    max-height: 0px;
-    width: 100vw;
-    padding: $mobile-menu-padding * 1.5;
-    // Colors and style
-    background-color: $dark-red;
-    border-top:    solid 0px lighten($dark-red, 10%);
-    border-bottom: solid 0px darken( $dark-red, 10%);
-    // Transition
-    transition: padding   1s,   max-height       1s, 
-                font-size 1s,   letter-spacing   1s, 
-                color     1s,   background-color 1s,
-                opacity 0.5s;
+
+
+/*----------------------------------------------------------------------------*\
+  Dropdown mechanics
+\*----------------------------------------------------------------------------*/
+
+/* Menu logistics --------------------*/
+input[type=checkbox] {
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0 0 0 0); 
+  z-index: -9999999;
+}
+
+input[type=checkbox]:checked {
+  // the menu
+  & ~ .mobile-menu { @extend .mobile-menu--expanded; }
+  // The navicon
+  & ~ .menu__masthead__wrapper .mobile-menu__navicon:before {
+    background-color: $menu-overlay-color;
+    box-shadow: 
+      0 2 * $hamburger-ratio * $hamburger-dimension $menu-overlay-color, 
+      0 -2 * $hamburger-ratio * $hamburger-dimension $menu-overlay-color;
   }
-  &:hover .mobile-menu__item {
-    border-top:    solid 1px lighten($dark-red, 10%);
-    border-bottom: solid 1px darken( $dark-red, 10%);
-    // Layout stuff
+}
+
+/* Changes on list expansion ---------*/
+.mobile-menu--expanded {
+  // The navicon
+  .mobile-menu__navicon:before {
+    background-color: $medium-grey;
+    box-shadow: 
+      0 2 * $hamburger-ratio * $hamburger-dimension $menu-overlay-color, 
+      0 4 * $hamburger-ratio * $hamburger-dimension $menu-overlay-color;
+  }
+  // The list itself
+  .mobile-menu__item {
+    margin: $mobile-menu-border-width;
+    margin-top: 0;
     max-height: 9999999px;
-    font-size: large;
+    font-size: 1.5em;
     opacity: 1;
   }
-  .mobile-menu__item:hover {
-    background-color: $dark-magenta;
+}
+
+
+
+/*----------------------------------------------------------------------------*\
+  Dropdown list items
+\*----------------------------------------------------------------------------*/
+
+/* The list items themselves ---------*/
+.mobile-menu__item {
+  // Font stuff
+  @include small-caps;
+  text-transform: lowercase;
+  text-align: center;
+  font-size: 0;
+  // Layout stuff
+  max-height: 0px;
+  // Colors and style
+  background-color: $menu-overlay-color;
+  opacity: 0;
+  // Transition
+  transition: padding 1s,   max-height 1s, 
+                margin  1s,   font-size  1s,
+                opacity 0.5s,
+                letter-spacing 1s, background-color 1s;
+  // On hover, do stuff
+  &:hover {
+    background-color: rgba($menu-overlay-color, 0.8);
     letter-spacing: 1px;
   }
+}
+  
+
+/* Home button in menu ---------------*/
+.mobile-menu__home {
+  @extend .mobile-menu__item;
+  color: $base-font-color;
 }
 
 /* Big, fancy navigation in menu -----*/
 .mobile-menu__primary { 
   @extend .mobile-menu__item;
-  &:hover { background-color: yellow; }
-  @include link-coloring-self($pale-grey, $almost-white);
+  color: $dark-magenta;
 }
 
 /* Small navigation in menu ----------*/
 .mobile-menu__secondary {
   @extend .mobile-menu__item;
-  @include link-coloring-self($medium-grey, $almost-white);
+  color: $dark-red;
 }

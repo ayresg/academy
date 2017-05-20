@@ -78,8 +78,7 @@ time, mark, audio, video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
-  vertical-align: baseline; }
+  font: inherit; }
 
 /* HTML5 display-role reset for older browsers */
 /* line 27, /Users/gabeeayres/Sites/academy/public/stylesheets/_reset.scss */
@@ -114,7 +113,7 @@ table {
 \*------------------------------------*/
 /* Banner variables */
 /* Banner wrapper --------------------*/
-/* line 13, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+/* line 15, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
 .banner {
   min-width: 100vw;
   min-height: 40vw;
@@ -124,13 +123,13 @@ table {
   background-repeat: no-repeat;
   background-size: cover; }
   @media (max-width: 550px) {
-    /* line 13, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+    /* line 15, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
     .banner {
       display: none; } }
-  /* line 26, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+  /* line 28, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
   .banner * {
     position: relative; }
-  /* line 29, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+  /* line 31, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
   .banner:before {
     position: absolute;
     content: "";
@@ -139,7 +138,7 @@ table {
     background-image: linear-gradient(rgba(52, 28, 39, 0.8), rgba(107, 150, 190, 0.6) 60%, rgba(107, 150, 190, 0.7)); }
 
 /* Page title header -----------------*/
-/* line 43, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+/* line 45, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
 .banner__h1 {
   font-family: "Im Fell English", cursive;
   font-style: italic;
@@ -149,24 +148,24 @@ table {
   color: #341c27;
   font-size: 5vw; }
 
-/* line 50, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+/* line 52, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
 .banner__border {
   height: 6px; }
 
-/* line 51, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+/* line 53, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
 .banner__h1 + .banner__border,
 .banner__filler--white + .banner__border {
   background-image: linear-gradient(left, transparent, #f0f3ff);
   background-image: linear-gradient(to right, transparent, #f0f3ff); }
 
 /* Banner padding styling --*/
-/* line 58, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+/* line 60, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
 .banner__filler--white {
   height: 3vw;
   background-color: #f0f3ff; }
 
 /* Big, fancy navigation in banner ---*/
-/* line 65, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+/* line 67, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
 .banner__primary {
   font-family: "IM Fell English SC", serif;
   letter-spacing: 1.25;
@@ -178,51 +177,51 @@ table {
   padding: 0.125em;
   justify-content: space-around;
   align-items: center; }
-  /* line 78, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+  /* line 80, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
   .banner__primary li {
     position: relative;
     flex: 1 1 auto;
     text-align: center; }
-    /* line 79, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+    /* line 81, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
     .banner__primary li a {
       transition: color 0.5s;
       color: #341c27; }
-      /* line 94, /Users/gabeeayres/Sites/academy/public/stylesheets/_settings_tools.scss */
+      /* line 92, /Users/gabeeayres/Sites/academy/public/stylesheets/_vars_mixins.scss */
       .banner__primary li a:hover {
         color: #7e002b; }
 
-/* line 88, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+/* line 90, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
 .banner__ampersand {
   font-size: smaller; }
 
-/* line 91, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+/* line 93, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
 .delimiter {
   color: #341c27;
   padding-top: 0.3em;
   font-size: 0.5em; }
 
 /* Small upper navigation in banner --*/
-/* line 99, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+/* line 101, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
 .banner__secondary {
   font-size: small;
   padding: 0.5em;
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end; }
-  /* line 98, /Users/gabeeayres/Sites/academy/public/stylesheets/_settings_tools.scss */
+  /* line 96, /Users/gabeeayres/Sites/academy/public/stylesheets/_vars_mixins.scss */
   .banner__secondary a, .banner__secondarya, .banner__secondary a * {
     transition: color 0.5s;
     color: #b2c8dd; }
-    /* line 101, /Users/gabeeayres/Sites/academy/public/stylesheets/_settings_tools.scss */
+    /* line 99, /Users/gabeeayres/Sites/academy/public/stylesheets/_vars_mixins.scss */
     .banner__secondary a:hover, .banner__secondarya:hover, .banner__secondary a *:hover {
       color: #f0f3ff; }
-  /* line 111, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+  /* line 113, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
   .banner__secondary li {
     margin: 0 0.25em;
     padding: 0 0.25em; }
 
 /* Masthead --------------------------*/
-/* line 116, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+/* line 118, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
 .banner__masthead {
   color: rgba(178, 200, 221, 0.75);
   margin: 0.2em;
@@ -234,42 +233,42 @@ table {
   align-items: flex-start; }
 
 /* Arms ------------------------------*/
-/* line 129, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+/* line 131, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
 .banner__arms {
   display: none;
   min-width: 10vw;
   margin-right: 1em; }
   @media (max-width: 700px) {
-    /* line 129, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+    /* line 131, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
     .banner__arms {
       display: none; } }
 
-/* line 137, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+/* line 139, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
 .banner__arms--light {
   fill: rgba(178, 200, 221, 0.75); }
 
-/* line 138, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+/* line 140, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
 .banner__arms--dark {
   stroke: rgba(178, 200, 221, 0.75);
   fill: #0d0f0e; }
 
 /* Title -----------------------------*/
-/* line 145, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+/* line 147, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
 .banner__title {
   font-family: "Im Fell English", serif;
   font-size: 5vw; }
 
-/* line 149, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+/* line 151, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
 .banner__title__academy {
   font-size: larger; }
 
-/* line 152, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+/* line 154, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
 .banner__title__subtitle {
   display: flex;
   justify-content: space-between;
   font-size: 2.5vw; }
 
-/* line 157, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
+/* line 159, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_banner.scss */
 .banner__title__subtitle--small {
   font-style: italic;
   font-size: smaller; }
@@ -277,110 +276,190 @@ table {
 /*------------------------------------*  #PAGE-HEAD (Mobile menu)
 \*------------------------------------*/
 /* Menu variables --------------------*/
+/*----------------------------------------------------------------------------*  Wrappers
+\*----------------------------------------------------------------------------*/
 /* Menu wrapper ----------------------*/
-/* line 14, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
+/* line 25, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
 .mobile-menu__wrapper {
   background-color: #341c27;
-  min-height: calc(($mobile-menu-padding * 4) + $mobile-menu-title-size); }
+  background-repeat: no-repeat;
+  background-size: auto;
+  position: relative; }
   @media (min-width: 550px) {
-    /* line 14, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
+    /* line 25, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
     .mobile-menu__wrapper {
       display: none; } }
-
-/* Title -----------------------------*/
-/* line 22, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
-.menu__title {
-  color: #f0f3ff;
-  font-family: "Im Fell English", serif;
-  font-size: 0.9em;
-  position: absolute;
-  left: 0;
-  padding: 0.25em;
-  display: flex;
-  justify-content: space-between; }
   /* line 34, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
-  .menu__title > * {
-    padding: 0.25em; }
+  .mobile-menu__wrapper * {
+    position: relative; }
+  /* line 38, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
+  .mobile-menu__wrapper:before {
+    position: absolute;
+    content: "";
+    min-width: 100%;
+    min-height: 100%;
+    background-image: linear-gradient(rgba(52, 28, 39, 0.8), rgba(107, 150, 190, 0.8)); }
 
-/* line 37, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
-.menu__title--small {
-  font-style: italic;
-  font-size: smaller; }
-
-/* Menu logistics --------------------*/
-/* line 43, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
+/* Dropdown menu wrapper -------------*/
+/* line 51, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
 .mobile-menu {
   position: relative;
   z-index: 1;
-  right: 0;
+  margin-left: auto;
   display: flex;
   flex-direction: column; }
 
-/* Little goddamn hamburger menu -----*/
-/* line 53, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
-.mobile-menu .mobile-menu__navicon {
-  align-self: flex-end;
-  margin: 0.5em;
-  margin-bottom: 1.375em;
-  background-color: #f0f3ff;
-  width: 1.125em;
-  height: 0.16875em;
-  border-radius: 10px;
-  box-shadow: 0 0 #f0f3ff, 0 0.3375em #f0f3ff, 0 0.675em #f0f3ff; }
-
-/* line 70, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
-.mobile-menu:hover .mobile-menu__navicon {
-  background-color: #828b9b;
-  box-shadow: 0 0.3375em #828b9b, 0 0.675em #828b9b; }
-
-/* The list items themselves ---------*/
-/* line 80, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
-.mobile-menu .mobile-menu__item, .mobile-menu .mobile-menu__primary, .mobile-menu .mobile-menu__secondary {
-  text-align: center;
-  font-family: "Im Fell English", serif;
-  font-size: 0;
-  opacity: 0;
-  max-height: 0px;
-  width: 100vw;
+/*----------------------------------------------------------------------------*  Mobile title style
+\*----------------------------------------------------------------------------*/
+/* Page title header -----------------*/
+/* line 67, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
+.menu__h1 {
+  font-family: "Im Fell English", cursive;
+  font-style: italic;
   padding: 0.375em;
-  background-color: #341c27;
-  border-top: solid 0px #552e40;
-  border-bottom: solid 0px #130a0e;
-  transition: padding   1s,   max-height       1s,  font-size 1s,   letter-spacing   1s,  color     1s,   background-color 1s, opacity 0.5s; }
+  margin-bottom: 4px;
+  background-color: rgba(178, 200, 221, 0.55);
+  color: #341c27;
+  font-size: 1.5em; }
 
-/* line 100, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
-.mobile-menu:hover .mobile-menu__item, .mobile-menu:hover .mobile-menu__primary, .mobile-menu:hover .mobile-menu__secondary {
-  border-top: solid 1px #552e40;
-  border-bottom: solid 1px #130a0e;
+/* Banner padding styling ------------*/
+/* line 78, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
+.menu__filler--white {
+  background-color: #f0f3ff; }
+
+/*----------------------------------------------------------------------------*  Masthead stuff
+\*----------------------------------------------------------------------------*/
+/* Menu header -----------------------*/
+/* line 90, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
+.menu__masthead__wrapper {
+  min-height: calc(($mobile-menu-padding * 4) + $mobile-menu-title-size);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+  /* line 97, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
+  .menu__masthead__wrapper > div, .menu__masthead__wrapper > label {
+    margin: 0.5em; }
+
+/* Masthead --------------------------*/
+/* line 103, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
+.menu__masthead {
+  color: #f0f3ff;
+  font-family: "Im Fell English", serif;
+  font-size: 4vw;
+  margin-top: 0.1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline; }
+  /* line 115, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
+  .menu__masthead > * {
+    padding: 0.25em; }
+
+/* line 120, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
+.menu__masthead--small {
+  font-style: italic;
+  font-size: smaller;
+  padding-right: 0.35em; }
+
+/*----------------------------------------------------------------------------*  Navicon (hamburger menu button)
+\*----------------------------------------------------------------------------*/
+/* Navicon wrapper -------------------*/
+/* line 132, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
+.mobile-menu__navicon__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+/* Menu label ------------------------*/
+/* line 138, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
+.mobile-menu__label {
+  color: #b2c8dd;
+  font-size: 0.75em; }
+
+/* Icon itself -----------------------*/
+/* line 143, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
+.mobile-menu__navicon {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 2.1em;
+  height: 1.5em; }
+  /* line 151, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
+  .mobile-menu__navicon:before {
+    content: "";
+    position: absolute;
+    background-color: #f0f3ff;
+    width: 100%;
+    height: 0.3em;
+    border-radius: 10px;
+    box-shadow: 0 0 #f0f3ff, 0 0.6em #f0f3ff, 0 -0.6em #f0f3ff; }
+
+/*----------------------------------------------------------------------------*  Dropdown mechanics
+\*----------------------------------------------------------------------------*/
+/* Menu logistics --------------------*/
+/* line 174, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
+input[type=checkbox] {
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0 0 0 0);
+  z-index: -9999999; }
+
+/* line 188, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
+input[type=checkbox]:checked ~ .menu__masthead__wrapper .mobile-menu__navicon:before {
+  background-color: rgba(178, 200, 221, 0.55);
+  box-shadow: 0 0.6em rgba(178, 200, 221, 0.55), 0 -0.6em rgba(178, 200, 221, 0.55); }
+
+/* Changes on list expansion ---------*/
+/* line 199, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
+.mobile-menu--expanded .mobile-menu__navicon:before, input[type=checkbox]:checked ~ .mobile-menu .mobile-menu__navicon:before {
+  background-color: #828b9b;
+  box-shadow: 0 0.6em rgba(178, 200, 221, 0.55), 0 1.2em rgba(178, 200, 221, 0.55); }
+
+/* line 206, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
+.mobile-menu--expanded .mobile-menu__item, input[type=checkbox]:checked ~ .mobile-menu .mobile-menu__item, .mobile-menu--expanded .mobile-menu__home, input[type=checkbox]:checked ~ .mobile-menu .mobile-menu__home, .mobile-menu--expanded .mobile-menu__primary, input[type=checkbox]:checked ~ .mobile-menu .mobile-menu__primary, .mobile-menu--expanded .mobile-menu__secondary, input[type=checkbox]:checked ~ .mobile-menu .mobile-menu__secondary {
+  margin: 4px;
+  margin-top: 0;
   max-height: 9999999px;
-  font-size: large;
+  font-size: 1.5em;
   opacity: 1; }
 
-/* line 108, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
-.mobile-menu .mobile-menu__item:hover, .mobile-menu .mobile-menu__primary:hover, .mobile-menu .mobile-menu__secondary:hover {
-  background-color: #621c34;
-  letter-spacing: 1px; }
+/*----------------------------------------------------------------------------*  Dropdown list items
+\*----------------------------------------------------------------------------*/
+/* The list items themselves ---------*/
+/* line 222, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
+.mobile-menu__item, .mobile-menu__home, .mobile-menu__primary, .mobile-menu__secondary {
+  font-family: "IM Fell English SC", serif;
+  letter-spacing: 1.25;
+  text-transform: lowercase;
+  text-align: center;
+  font-size: 0;
+  max-height: 0px;
+  background-color: rgba(178, 200, 221, 0.55);
+  opacity: 0;
+  transition: padding 1s,   max-height 1s,  margin  1s,   font-size  1s, opacity 0.5s, letter-spacing 1s, background-color 1s; }
+  /* line 239, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
+  .mobile-menu__item:hover, .mobile-menu__home:hover, .mobile-menu__primary:hover, .mobile-menu__secondary:hover {
+    background-color: rgba(178, 200, 221, 0.8);
+    letter-spacing: 1px; }
+
+/* Home button in menu ---------------*/
+/* line 247, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
+.mobile-menu__home {
+  color: #0d0f0e; }
 
 /* Big, fancy navigation in menu -----*/
-/* line 115, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
+/* line 253, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
 .mobile-menu__primary {
-  transition: color 0.5s;
-  color: #b4b7be; }
-  /* line 117, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
-  .mobile-menu__primary:hover {
-    background-color: yellow; }
-  /* line 94, /Users/gabeeayres/Sites/academy/public/stylesheets/_settings_tools.scss */
-  .mobile-menu__primary:hover {
-    color: #f0f3ff; }
+  color: #621c34; }
 
 /* Small navigation in menu ----------*/
-/* line 122, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
+/* line 259, /Users/gabeeayres/Sites/academy/public/stylesheets/_page_head_menu.scss */
 .mobile-menu__secondary {
-  transition: color 0.5s;
-  color: #828b9b; }
-  /* line 94, /Users/gabeeayres/Sites/academy/public/stylesheets/_settings_tools.scss */
-  .mobile-menu__secondary:hover {
-    color: #f0f3ff; }
+  color: #341c27; }
 
 /*------------------------------------*  #PAGE-FOOTER
 \*------------------------------------*/
@@ -404,11 +483,11 @@ table {
   padding: 0.125em;
   font-size: smaller;
   color: #828b9b; }
-  /* line 98, /Users/gabeeayres/Sites/academy/public/stylesheets/_settings_tools.scss */
+  /* line 96, /Users/gabeeayres/Sites/academy/public/stylesheets/_vars_mixins.scss */
   .footer__item a, .footer__itema, .footer__item a * {
     transition: color 0.5s;
     color: #b4b7be; }
-    /* line 101, /Users/gabeeayres/Sites/academy/public/stylesheets/_settings_tools.scss */
+    /* line 99, /Users/gabeeayres/Sites/academy/public/stylesheets/_vars_mixins.scss */
     .footer__item a:hover, .footer__itema:hover, .footer__item a *:hover {
       color: #f0f3ff; }
 
@@ -416,7 +495,6 @@ table {
 \*------------------------------------*/
 /* line 5, /Users/gabeeayres/Sites/academy/public/stylesheets/_headers.scss */
 .h2, .typography h2, .typography .h2, .h3, .typography h3, .typography .h3, .h4, .typography h4, .typography .h4, .h5, .typography h5, .typography .h5, .h6, .typography h6, .typography .h6 {
-  margin-top: 0.5em;
   font-family: "Im Fell English", serif;
   font-weight: 400;
   color: #341c27; }
@@ -434,7 +512,7 @@ table {
     .h2, .typography h2, .typography .h2 {
       background-image: linear-gradient(left, transparent, #f0f3ff 80%);
       background-image: linear-gradient(to right, transparent, #f0f3ff 80%); } }
-  /* line 177, /Users/gabeeayres/Sites/academy/public/stylesheets/_settings_tools.scss */
+  /* line 178, /Users/gabeeayres/Sites/academy/public/stylesheets/_vars_mixins.scss */
   .h2:before, .typography h2:before, .typography .h2:before {
     border-top: 3px solid #828b9b;
     border-bottom: 3px solid #828b9b;
@@ -459,7 +537,7 @@ table {
     .h3, .typography h3, .typography .h3 {
       background-image: linear-gradient(left, transparent, #f0f3ff 60%);
       background-image: linear-gradient(to right, transparent, #f0f3ff 60%); } }
-  /* line 177, /Users/gabeeayres/Sites/academy/public/stylesheets/_settings_tools.scss */
+  /* line 178, /Users/gabeeayres/Sites/academy/public/stylesheets/_vars_mixins.scss */
   .h3:before, .typography h3:before, .typography .h3:before {
     border-top: 3px solid #828b9b;
     border-bottom: 3px solid #828b9b;
@@ -512,10 +590,10 @@ table {
 .main .link, .typography main .link, .main .typography a, .typography .main a, .typography main a {
   transition: color 0.5s;
   color: #8a2749; }
-  /* line 94, /Users/gabeeayres/Sites/academy/public/stylesheets/_settings_tools.scss */
+  /* line 92, /Users/gabeeayres/Sites/academy/public/stylesheets/_vars_mixins.scss */
   .main .link:hover, .typography main .link:hover, .main .typography a:hover, .typography .main a:hover, .typography main a:hover {
     color: #ee296c; }
-  /* line 95, /Users/gabeeayres/Sites/academy/public/stylesheets/_settings_tools.scss */
+  /* line 93, /Users/gabeeayres/Sites/academy/public/stylesheets/_vars_mixins.scss */
   .main .link:visited, .typography main .link:visited, .main .typography a:visited, .typography .main a:visited, .typography main a:visited {
     color: #5d5457; }
 

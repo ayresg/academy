@@ -63,8 +63,6 @@ $small-caps-letter-spacing: 1.25;
 $margin: 0.5em;
 $padding: 0.5em;
 
-$banner-border-width: 6px;
-
 $tiny-screen-threshold: 300px;
 $small-screen-threshold: 550px;  
 $big-screen-threshold: 700px;
@@ -166,9 +164,12 @@ $big-screen-threshold: 700px;
   background-image: linear-gradient(to $destination, $base-color, $other-color);
 }
 
-@mixin heading-background($bg-color, $bg-percent, $border-color, $border-width, $text-color) {
+@mixin heading-background($bg-color, $bg-percent, 
+                          $border-color, $border-width, 
+                          $text-color) {
   @media (min-width: $small-screen-threshold) {
-    @include background-gradient(transparent, $background-color $bg-percent, left, right);
+    @include background-gradient(transparent, $background-color $bg-percent, 
+                                 left, right);
   }
   color: $text-color;
   padding: $padding;

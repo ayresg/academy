@@ -81,25 +81,33 @@
     </header>
 
   <!-- Small Header and Navbar (Primary & Secondary) -->
-  <header class="mobile-menu__wrapper" style='background-image: url(<%="../images/banners/#{@image.file_name}" %>);'>
-    <!-- Small Masthead -->
-    <a href="<%= url('/') %>" class="menu__title">
-      <span>ACADEMY</span>
-      <span class="menu__title--small">of</span>
-      <span>SCHOLA<i>RS</i></span>
-      <span class="menu__title--small">and</span>
-      <span>FOOLS</span></a>
+  <header class="mobile-menu__wrapper" style='background-image: url(<%="../images/banners_portrait/#{@image.file_name}" %>);'>
+   <input type="checkbox" role="button" id="navigation_menu">
+   
+    <div class="menu__masthead__wrapper">
+      <!-- Small Masthead -->
+      <div class="menu__masthead">
+        <span>ACADEMY</span>
+        <span class="menu__masthead--small">of</span>
+        <span>SCHOLA<i>RS</i></span>
+        <span class="menu__masthead--small">and</span>
+        <span>FOOLS</span>
+      </div>
+      
+      <!-- Navicon -->
+      <label for="navigation_menu" class="mobile-menu__navicon__wrapper">
+      <div class="mobile-menu__navicon"></div>
+      <span class="mobile-menu__label">MENU</span>
+      </label>
+    </div>
 
     <!--Small Navigation-->
     <ul class="plain-list mobile-menu">
-      <!-- Navicon -->
-      <li class="mobile-menu__navicon"></li>
-     
       <!--Small primary navigation-->
       <a href="<%= url('/academics') %>" class="mobile-menu__primary">
         <li>Academics</li></a>
       <a href="<%= url('/admissions') %>" class="mobile-menu__primary">
-        <li>Admissions &amp; Aid</li></a>
+        <li>Admissions <span class="banner__ampersand">&amp;</span> Aid</li></a>
       <a href="<%= url('/student-life') %>" class="mobile-menu__primary">
         <li>Student Life</li></a>
       <a href="<%= url('/about') %>" class="mobile-menu__primary">
@@ -109,14 +117,21 @@
       <a href="<%= url('/students') %>" class="mobile-menu__secondary">
         <li>Students</li></a>
       <a href="<%= url('/faculty-and-staff') %>"  class="mobile-menu__secondary">
-        <li>Faculty &amp; Staff</li></a>
+        <li>Faculty <span class="banner__ampersand">&amp;</span> Staff</li></a>
       <a href="<%= url('/guild') %>" class="mobile-menu__secondary">
         <li>Guild</li></a>
       <a href="<%= url('/visitors') %>" class="mobile-menu__secondary">
         <li>Visitors</li></a>
+        
+      <!-- Home link -->
+      <a href="<%= url('/') %>" class="mobile-menu__home"><li>Home</li></a>
     </ul>
-  
-    <h1><%= @title %></h1>
+     
+<!-- Title and fancy stuff -->
+      <div class="menu__filler--white"></div>
+      <div class="menu__border"></div>
+      <h1  class="menu__h1"><%= @title %></h1>
+      <div class="menu__border"></div>
   </header>
 
 <!-- Main content -->

@@ -4,10 +4,12 @@
 
 /* Banner variables */
 $banner-title-size: 5vw;
+$banner-border-width: 6px;
+$masthead-width: 40vw;
 $min-banner-height: 30vw + $banner-title-size * 2;
+
 $banner-overlay-color: rgba($very-pale-grey-blue, 0.55);
 $masthead-light: rgba($very-pale-grey-blue, 0.75);
-$masthead-width: 40vw;
 
 /* Banner wrapper --------------------*/
 .banner { // visible only when screen is big enough
