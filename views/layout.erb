@@ -8,8 +8,11 @@
       else
         @title = 'Academy of Scholars and Fools'
       end
-      @image ||= 'cliffside_castle.jpg'
+
+      # handle cases where the image isn't specified or isn't in the DB
       @image = Image.find_by_file_name(@image)
+      @image ||= Image.find_by_file_name('cliffside_castle.jpg')
+      
     %>
 
     <!-- Title -->
@@ -86,13 +89,15 @@
    
     <div class="menu__masthead__wrapper">
       <!-- Small Masthead -->
-      <div class="menu__masthead">
-        <span>ACADEMY</span>
-        <span class="menu__masthead--small">of</span>
-        <span>SCHOLA<i>RS</i></span>
-        <span class="menu__masthead--small">and</span>
-        <span>FOOLS</span>
-      </div>
+      <a href="<%= url('/') %>" class="menu__masthead">
+        <div class="menu__masthead__academy" >ACADEMY</div>
+        <div class="menu__masthead__subtitle">
+          <span class="menu__masthead__subtitle--small">of</span>
+          <span>SCHOLA<i>RS</i></span>
+          <span class="menu__masthead__subtitle--small">and</span>
+          <span>FOOLS</span>
+        </div>
+      </a>
       
       <!-- Navicon -->
       <label for="navigation_menu" class="mobile-menu__navicon__wrapper">

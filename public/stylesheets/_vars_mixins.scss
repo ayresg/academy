@@ -148,8 +148,14 @@ $big-screen-threshold: 700px;
 
 
 /* Sizing ----------------------------*/
-@mixin max-size($w, $h) { max-width: $w; max-height: $h; }
-@mixin min-size($w:100%, $h:100%) { min-width: $w; min-height: $h; }
+@mixin max-size($w, $h) { 
+  max-width: $w; 
+  max-height: $h; 
+}
+@mixin min-size($w:100%, $h:100%) { 
+  min-width: $w; 
+  min-height: $h; 
+}
 @mixin pseudo-fill {
   min-width: 100%;
   min-height: 100%;
@@ -159,17 +165,12 @@ $big-screen-threshold: 700px;
 
 
 /* Gradients -------------------------*/
-@mixin background-gradient($base-color, $other-color, $origin, $destination) {
-  background-image: linear-gradient($origin, $base-color, $other-color);
-  background-image: linear-gradient(to $destination, $base-color, $other-color);
-}
-
 @mixin heading-background($bg-color, $bg-percent, 
                           $border-color, $border-width, 
                           $text-color) {
   @media (min-width: $small-screen-threshold) {
-    @include background-gradient(transparent, $background-color $bg-percent, 
-                                 left, right);
+    background-color: linear-gradient(to right, transparent, 
+      $background-color $bg-percent);
   }
   color: $text-color;
   padding: $padding;

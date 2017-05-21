@@ -43,22 +43,22 @@ $masthead-light: rgba($very-pale-grey-blue, 0.75);
 
 /* Page title header -----------------*/
 .banner__h1 {
-    @include cursive;
-    @include background-gradient($banner-overlay-color, $background-color, left, right);
-    padding: $padding * .75;
-    color: $dark-red;
-    font-size: $banner-title-size;
+  @include cursive;
+  background-image: linear-gradient(to right, $banner-overlay-color, $background-color);
+  padding: $padding * .75;
+  color: $dark-red;
+  font-size: $banner-title-size;
   }
 .banner__border { height: $banner-border-width; }
 .banner__h1 + .banner__border,
 .banner__filler--white + .banner__border {
-    @include background-gradient(transparent, $background-color, left, right);
-  }
+  background-image: linear-gradient(to right, transparent, $background-color);
+}
 
 
 /* Banner padding styling --*/
 .banner__filler--white {
-  height: 3vw;
+  height: $margin;
   background-color: $background-color;
 }
 
