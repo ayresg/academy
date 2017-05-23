@@ -71,7 +71,14 @@
 }
 
 /* Lists -----------------------------*/
-.unordered-list { list-style-type: disc; }
+.unordered-list {
+  list-style-type: none;
+  li:before {
+    content: "\2756";
+    width: 1.5em;
+    padding-right: 1ch;
+  }
+}
 .ordered-list   { list-style-type: decimal; }
 .plain-list     { list-style-type: none; }
 
@@ -105,7 +112,7 @@
 
   ul:not(.plain-list) { 
     @extend .unordered-list; 
-    @include indent;
+//    @include indent;
   }
   ol:not(.plain-list) { 
     @extend .ordered-list; 
