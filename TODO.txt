@@ -33,13 +33,11 @@ Things yet to do:
   - outreach from Guild of Orphans and Lords Chancellor
 - Textarea: characters remaining?
 - Accordion menus
-- Fix hover/click stuff for mobile
 - handle CSS when window is SHORT, not just narrow
 - Handle header text being too big for the screen on mobile
   - may require comparing vw/vh and ems
 - Make layout pretty
-- Make small menu with background pretty
-- Find better portrait shots of the banners
+- make navicon do the thing where cursor becomes gloved hand
 
 
 DONE:
@@ -49,3 +47,7 @@ DONE:
   - find a font that doesn't have teeeny punctuation
 - fix banner image heights (figure out how cropping and regexes and shit work)
   - spruce up small headers (images? borders? gradients?)
+- Find better portrait shots of the banners
+- Make small menu with background pretty
+- Fix hover/click stuff for mobile
+- stick footer to the BOTTOM of the page

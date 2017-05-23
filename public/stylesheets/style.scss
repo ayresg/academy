@@ -53,12 +53,11 @@
                                           $link-color-hover, 
                                           $link-color-visited) }
 
-
 /* Layout ----------------------------*/
 .page {
   // layout
   width:  100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -104,8 +103,14 @@
   h5, .h5 { @extend .h5; }
   h6, .h6 { @extend .h6; }
 
-  ul:not(.plain-list) { @extend .unordered-list; @include indent; }
-  ol:not(.plain-list) { @extend .ordered-list;   @include indent; }
+  ul:not(.plain-list) { 
+    @extend .unordered-list; 
+    @include indent;
+  }
+  ol:not(.plain-list) { 
+    @extend .ordered-list; 
+    @include indent; 
+  }
 
   a { @extend .link; }
   
