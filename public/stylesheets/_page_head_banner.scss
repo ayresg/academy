@@ -16,7 +16,7 @@ $masthead-light: rgba($very-pale-grey-blue, 0.75);
   @media (max-width: $small-screen-threshold) { display: none; }
   
   // layout
-  @include min-size(100vw, $min-banner-height);
+  @include min-size(100%, $min-banner-height);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -31,7 +31,7 @@ $masthead-light: rgba($very-pale-grey-blue, 0.75);
   &:before {
     position: absolute;
     content: "";
-    @include min-size(100vw, $min-banner-height);
+    @include min-size(100%, $min-banner-height);
     
     background-image: linear-gradient(
       rgba($dark-red, 0.8),
@@ -83,6 +83,7 @@ $masthead-light: rgba($very-pale-grey-blue, 0.75);
     position: relative;
     flex: 1 1 auto;
     text-align: center;
+//    transition-duration: 10s;
   }
 }
 

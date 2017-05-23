@@ -1,0 +1,18 @@
+{   
+    "sass.enabled": false,
+    "path": {
+        "public/stylesheets/style.scss": {
+            "sass.enabled": true,
+            "sass.options": {
+                "includePaths": [
+                    "../stylesheets/"
+                ],
+                "outputDir": "../stylesheets",
+                "imagePath": null,
+                "sourceComments": "map",
+                "outputStyle": "compressed"
+            },
+            "linting.collapsed": false
+        }
+    }
+}

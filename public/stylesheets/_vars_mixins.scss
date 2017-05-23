@@ -87,14 +87,14 @@ $big-screen-threshold: 700px;
 
 /* Links -----------------------------*/
 @mixin link-coloring-self($base, $hover:'-1', $visited:'-1') {
-    transition: color 0.5s;
+    transition: color 1s;
     color: $base;
     @if $hover != '-1' { &:hover { color: $hover; } }
     @if $visited != '-1' { &:visited { color: $visited; } }
 }
 @mixin link-coloring-descendents($base, $hover:'-1', $visited:'-1') {
   a, &a, a * {
-    transition: color 0.5s;
+    transition: color 1s;
     color: $base;
     @if $hover != '-1' { &:hover { color: $hover; } }
     @if $visited != '-1' { &:visited { color: $visited; } }
@@ -169,8 +169,8 @@ $big-screen-threshold: 700px;
                           $border-color, $border-width, 
                           $text-color) {
   @media (min-width: $small-screen-threshold) {
-    background-color: linear-gradient(to right, transparent, 
-      $background-color $bg-percent);
+    background-image: linear-gradient(to right, transparent, 
+    $background-color);
   }
   color: $text-color;
   padding: $padding;

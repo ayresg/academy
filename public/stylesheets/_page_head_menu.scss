@@ -248,6 +248,7 @@ input[type=checkbox]:checked {
   
   // Transition
   transition: all 1s, opacity 0.5s;
+  transition-timing-function: linear;
 }
 .mobile-menu__item:hover {
   background-color: rgba($menu-overlay-color, 0.8);
