@@ -37,6 +37,10 @@
   #BASE
 \*------------------------------------*/
 
+/* Fixing page size ------------------*/
+html { height: 100%;}
+
+
 /* Font styling-----------------------*/
 .quiet { color: $quiet-color; }
 .loud  { color: $loud-color; }
@@ -57,7 +61,7 @@
 .page {
   // layout
   width:  100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
