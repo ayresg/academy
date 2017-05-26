@@ -11,7 +11,7 @@ $footer-background-color: $dark-red;
   @media(max-width: $small-screen-threshold) { flex-direction: column; }
   padding: $padding;
   
-  bottom: 0;
+  margin-top: auto;
   
   background-color: $dark-red;
   display: flex;
