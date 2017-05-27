@@ -13,7 +13,9 @@ $masthead-light: rgba($very-pale-grey-blue, 0.75);
 
 /* Banner wrapper --------------------*/
 .banner { // visible only when screen is big enough
-  @media (max-width: $small-screen-threshold) { display: none; }
+  @media (max-width: $small-screen-threshold) { 
+    @include hidden;
+  }
   
   // layout
   @include min-size(100%, $min-banner-height);
@@ -131,9 +133,9 @@ $masthead-light: rgba($very-pale-grey-blue, 0.75);
 /* Arms ------------------------------*/
 .banner__arms { // only display when screen is big enough
   
-  display: none; // turn off the arms for now
+  @include hidden; // turn off the arms for now
   
-  @media (max-width: $big-screen-threshold) { display: none; }
+  @media (max-width: $big-screen-threshold) { @include hidden; }
   min-width: $masthead-width / 4;
   margin-right: $margin * 2;
 }

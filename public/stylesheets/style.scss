@@ -12,6 +12,9 @@
  * BASE
  * Headings.............H1–H6 styles.
  *
+ * DYNAMIC
+ * Items................Classes that interact with JS.
+ *
  * OBJECTS
  * Wrappers.............Wrapping and constraining elements.
  *
@@ -114,8 +117,7 @@
   h6, .h6 { @extend .h6; }
 
   ul:not(.plain-list) { 
-    @extend .unordered-list; 
-//    @include indent;
+    @extend .unordered-list;
   }
   ol:not(.plain-list) { 
     @extend .ordered-list; 
@@ -133,5 +135,27 @@
 }
 
 /*------------------------------------*\
-  #WRAPPERS
+  #DYNAMIC
 \*------------------------------------*/
+.show   {  display: flex; visibility: visible; }
+
+/*------------------------------------*\
+  #OBJECTS
+\*------------------------------------*/
+
+.path-display {
+  background-color: $background-color;
+  position: relative;
+  display: flex;
+  padding: $padding;
+  color: $pale-grey-blue;
+  
+  li { margin: $margin / 4; }
+  
+  li:not(:first-child):before {
+    color: $medium-grey;
+    width: 3ch;
+    height: 100%;
+    content: "> ";
+  }
+}

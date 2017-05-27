@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <!-- Set default title and image -->
+  <!-- Set title and image from page or by default as needed -->
   <% if @title
         @page_title = @title + ' | Academy of Scholars and Fools'
       else
@@ -10,14 +10,14 @@
       end
 
       # handle cases where the image isn't specified or isn't in the DB
-      @image = Image.find_by_file_name(@image)
-      @image ||= Image.find_by_file_name('cliffside_castle.jpg')
+      @display_image = Image.find_by_file_name(@image)
+      @display_image ||= Image.find_by_file_name('cliffside_castle.jpg')
       
     %>
 
     <!-- Title -->
     <title>
-      <%= @page_title %>
+      <%= @page_title || @title %>
     </title>
 
     <!-- Metadata -->
@@ -31,26 +31,24 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Cutive+Mono|Ek+Mukta:300|IM+Fell+English:400,400i" rel="stylesheet">
-    
-    <!-- Scripts -->
 
 </head>
 
 <body class="typography">
   <!-- Big header and navbar and everything  -->
-  <header class="banner" style='background-image: url(<%="../images/banners/#{@image.file_name}" %>);'>
+  <header class="banner" style='background-image: url(<%="../images/banners/#{@display_image.file_name}" %>);'>
       
       
       <!-- Secondary Navbar (big)-->
-      <ul class="plain-list banner__secondary">
+      <ul class="plain-list banner__secondary" role="navigation" aria-label="Secondary">
         <li><a href="<%= url('/students') %>">Students</a></li>
         <li><a href="<%= url('/faculty-and-staff') %>">Faculty &amp; Staff</a></li>
         <li><a href="<%= url('/guild') %>">Guild</a></li>
         <li><a href="<%= url('/visitors') %>">Visitors</a></li>
       </ul>
-      <a href="<%= url('/') %>" class="banner__masthead" >
         
-        <!-- Title -->
+      <!-- Title -->
+      <a href="<%= url('/') %>" class="banner__masthead">
         <div class="banner__title">
           <div class="banner__title__academy">ACADEMY</div> <div class="banner__title__subtitle">
           <span class="banner__title__subtitle--small">of</span>
@@ -62,13 +60,13 @@
       </a>
 
       <!-- Primary Navbar (big) -->
-      <ul class="plain-list banner__primary">
+      <ul class="plain-list banner__primary" role="navigation" aria-label="Primary">
         <li><a href="<%= url('/academics') %>">Academics</a></li>
-        <div class="delimiter" aria-hiddine="true">&#10070;</div>
-        <li><a href="">Admissions <span class="banner__ampersand">&amp;</span> Aid</a></li>
-        <div class="delimiter" aria-hiddine="true">&#10070;</div>
+        <div class="delimiter" aria-hiddin="true">&#10070;</div>
+        <li><a href="<%= url('/admissions') %>">Admissions <span class="banner__ampersand">&amp;</span> Aid</a></li>
+        <div class="delimiter" aria-hiddin="true">&#10070;</div>
         <li><a href="<%= url('/student-life') %>"> Student Life</a></li>
-        <div class="delimiter" aria-hiddine="true">&#10070;</div>
+        <div class="delimiter" aria-hidden="true">&#10070;</div>
         <li><a href="<%= url('/about') %>">About</a></li>
       </ul>
       <div class="banner__border"></div>
@@ -79,8 +77,7 @@
     </header>
 
   <!-- Small Header and Navbar (Primary & Secondary) -->
-  <header class="mobile-menu__wrapper" style='background-image: url(<%="../images/banners_portrait/#{@image.file_name}" %>);'>
-   <input type="checkbox" role="button" id="navigation_menu">
+  <header class="mobile-menu__wrapper" style='background-image: url(<%="../images/banners_portrait/#{@display_image.file_name}" %>);'>
    
     <div class="menu__masthead__wrapper">
       <!-- Small Masthead -->
@@ -95,14 +92,14 @@
       </a>
       
       <!-- Navicon -->
-      <label for="navigation_menu" class="mobile-menu__navicon__wrapper">
-      <div class="mobile-menu__navicon"></div>
-      <span class="mobile-menu__label">MENU</span>
-      </label>
+      <button onclick="toggleMenu()" class="mobile-menu__navicon__wrapper">
+        <div class="mobile-menu__navicon"></div>
+        <span class="mobile-menu__label">MENU</span>
+      </button>
     </div>
 
     <!--Small Navigation-->
-    <ul class="plain-list mobile-menu">
+    <ul id="mobile-menu__target" class="plain-list mobile-menu" role="navigation">
       <!--Small primary navigation-->
       <a href="<%= url('/academics') %>" class="mobile-menu__primary">
         <li>Academics</li></a>
@@ -122,9 +119,6 @@
         <li>Guild</li></a>
       <a href="<%= url('/visitors') %>" class="mobile-menu__secondary">
         <li>Visitors</li></a>
-        
-      <!-- Home link -->
-      <a href="<%= url('/') %>" class="mobile-menu__home"><li>Home</li></a>
     </ul>
      
 <!-- Title and fancy stuff -->
@@ -135,8 +129,6 @@
   </header>
 
 <!-- Main content -->
-  <% erb :'partials/_path' %>
- 
   <main>
     <%= yield %>
   </main>
@@ -144,7 +136,7 @@
 <!-- Footer -->
   <footer class="footer__wrapper">
     <div class="footer__item">
-      <%= @image.attribution %>
+      <%= @display_image.attribution %>
     </div>
     
     <div class="footer__item">
@@ -155,6 +147,9 @@
       More links will go here when I get my shit together.
     </div>
   </footer>
+
+<!-- Scripts -->
+  <%= javascript_script_tag("/scripts/main.js", "/scripts/van11y-accessible-hide-show-aria.es6.js") %>
 
 </body>
 

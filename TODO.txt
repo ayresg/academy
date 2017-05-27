@@ -38,6 +38,7 @@ Things yet to do:
   - may require comparing vw/vh and ems
 - Make layout pretty
 - make navicon do the thing where cursor becomes gloved hand
+- make dropdown menu accessible (use javascript)
 
 
 DONE:

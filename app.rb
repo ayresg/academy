@@ -20,6 +20,28 @@ get '/academics/?' do
   erb :'academics'
 end
 
+# Academic resources
+get '/resources/:page' do |page|
+  @title = 'Academic Resources'
+  @image = 'jolly_jugglers.jpg'
+  # sanitize the file
+  case page
+  when 'online-learning'
+    @title = 'Online Learning'
+    @image = 'tightrope_walker.jpg'
+    erb :'resources/online-learning'
+  end
+  
+  
+  # find it
+  if File.exist?("views/resources/#{page}.erb")
+    erb :"resources/#{page}"
+  else
+    halt 404
+  end
+end
+
+# Academic departments
 get '/departments/:dept' do |dept|
   @dept = Department.find_by_page_address(dept)
   if @dept

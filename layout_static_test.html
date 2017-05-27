@@ -12,10 +12,8 @@
   <meta name="description" content="<%= @description %>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Links -->
-  <link rel="stylesheet" type="text/css" href="/public/stylesheets/style.css">
+  <link rel="stylesheet" type="text/css" href="public/stylesheets/style.css">
   <link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Cutive+Mono|Ek+Mukta:300|IM+Fell+English:400,400i" rel="stylesheet">
-  <!-- Scripts -->
-
 </head>
 
 
@@ -79,7 +77,6 @@
 
   <!-- Small Header and Navbar (Primary & Secondary) -->
   <header class="mobile-menu__wrapper" style="background-image: url('/public/images/banners_portrait/dramatic_yellow_clock.jpg')">
-    <input type="checkbox" role="button" id="navigation_menu">
 
     <div class="menu__masthead__wrapper">
       <!-- Small Masthead -->
@@ -94,10 +91,10 @@
       </a>
       
       <!-- Navicon -->
-      <label for="navigation_menu" class="mobile-menu__navicon__wrapper">
+      <button onclick="toggleMenu()" class="mobile-menu__navicon__wrapper">
       <div class="mobile-menu__navicon"></div>
       <span class="mobile-menu__label">MENU</span>
-      </label>
+      </button>
     </div>
 
     <!--Small Navigation-->
@@ -122,16 +119,16 @@
       <a href="<%= url('/visitors') %>" class="mobile-menu__secondary">
         <li>Visitors</li></a>
           
-      <!-- Home link -->
-        <a href="<%= url('/') %>" class="mobile-menu__home"><li>Home</li></a>
       </ul>
 <!-- Title and fancy stuff -->
       <div class="menu__filler--white"></div>
       <h1  class="menu__h1">Welcome to the Academy</h1>
   </header>
   
-  
 <main>
+<section>
+<p>This is a paragraph within a section. I'd like to thank the Academy, partly for the award and partly for making things ambiguous enough that you're not sure which academy I'm talking about.</p>
+</section>
 <section>
   <ul>
     <li>a</li>
@@ -142,7 +139,6 @@
   </ul>
 </section>
 
-<!--
     <section>
       <h2>What we're all about...</h2>
       <p>Here at the Academy, we prioritize learning of all types-- from scholarly pursuits to foolish antics. This is the place to hone your skills, be they intellectual or absurd. With our world-class library of arcane texts and jokebooks, state-of-the-art facilities, and one-of-a-kind projects, the Academy is the place to pursue your dreams.</p>
@@ -191,7 +187,6 @@
     <p></p>
   </section>
     
--->
 
   </main>
 
@@ -206,6 +201,10 @@
         More links will go here when I get my shit together.
       </div>
   </footer>
+
+
+<!-- Scripts -->
+<script src="/public/scripts/main.js"></script>
 
 </body>
 

@@ -29,7 +29,7 @@ $hamburger-ratio: 0.2;
 
 /* Menu wrapper ----------------------*/
 .mobile-menu__wrapper { // visible only when screen is small enough
-  @media (min-width: $small-screen-threshold) { display: none; }
+  @media (min-width: $small-screen-threshold) { @include hidden; }
   background-color: $dark-red;
   
   // background
@@ -51,7 +51,6 @@ $hamburger-ratio: 0.2;
       rgba($pale-grey-purple, 0.8) 70%,
       rgba($pale-grey-blue, 0.8));
   }
-  
 }
 
 /* Dropdown menu wrapper -------------*/
@@ -100,7 +99,7 @@ $hamburger-ratio: 0.2;
   justify-content: space-between;
   align-items: center;
   
-  &>.menu__masthead, &>label {
+  &>.menu__masthead, &>button {
     margin: $margin $margin * 1.25;
   }
 }
@@ -141,6 +140,8 @@ $hamburger-ratio: 0.2;
 \*----------------------------------------------------------------------------*/
 /* Navicon wrapper -------------------*/
 .mobile-menu__navicon__wrapper {
+  background: none;
+  border: none;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -183,35 +184,6 @@ $hamburger-ratio: 0.2;
   Dropdown mechanics
 \*----------------------------------------------------------------------------*/
 
-/* Menu logistics --------------------*/
-input[type=checkbox] {
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  overflow: hidden;
-  position: absolute;
-  clip: rect(0 0 0 0); 
-  z-index: -9999999;
-}
-
-input[type=checkbox]:checked {
-  // the menu
-  & ~ .mobile-menu { @extend .mobile-menu--expanded; }
-  
-  // The navicon
-  & ~ .menu__masthead__wrapper .mobile-menu__navicon:before {
-    background-color: $menu-overlay-color;
-    box-shadow: 
-      0 2 * $hamburger-ratio * $hamburger-dimension $menu-overlay-color, 
-      0 -2 * $hamburger-ratio * $hamburger-dimension $menu-overlay-color;
-  }
-  
-  // The navicon label
-  & ~ .menu__masthead__wrapper .mobile-menu__label {
-    color: $menu-overlay-color;
-  }
-}
-
 /* Changes on list expansion ---------*/
 .mobile-menu--expanded {
   // The list itself
@@ -247,18 +219,12 @@ input[type=checkbox]:checked {
   opacity: 0;
   
   // Transition
-  transition: all 1s, opacity 0.5s;
+  transition: all 1s, opacity 0.5s, outline 0s;
   transition-timing-function: linear;
 }
 .mobile-menu__item:hover {
   background-color: rgba($menu-overlay-color, 0.8);
   letter-spacing: 0.1em;
-}
-
-/* Home button in menu ---------------*/
-.mobile-menu__home {
-  @extend .mobile-menu__item;
-  color: $base-font-color;
 }
 
 /* Big, fancy navigation in menu -----*/
