@@ -75,16 +75,7 @@
 }
 
 /* Lists -----------------------------*/
-.unordered-list {
-  list-style-type: none;
-  li:before {
-    position: relative;
-    top: -0.11em;
-    font-size: small;
-    content: "\2756";
-    padding-right: 1ch;
-  }
-}
+.unordered-list { list-style-type: circle; }
 .ordered-list   { list-style-type: decimal; }
 .plain-list     { list-style-type: none; }
 

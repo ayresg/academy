@@ -49,7 +49,7 @@
         
       <!-- Title -->
       <a href="<%= url('/') %>" class="banner__masthead">
-        <div class="banner__title">
+        <div class="banner__title" aria-label="Academy of Scholars and Fools (homepage link)">
           <div class="banner__title__academy">ACADEMY</div> <div class="banner__title__subtitle">
           <span class="banner__title__subtitle--small">of</span>
           <span>SCHOLA<i>RS</i></span>
@@ -61,14 +61,16 @@
 
       <!-- Primary Navbar (big) -->
       <ul class="plain-list banner__primary" role="navigation" aria-label="Primary">
-        <li><a href="<%= url('/academics') %>">Academics</a></li>
+        <li><a href="<%= url('/academics') %>"> Academics </a></li>
         <div class="delimiter" aria-hiddin="true">&#10070;</div>
-        <li><a href="<%= url('/admissions') %>">Admissions <span class="banner__ampersand">&amp;</span> Aid</a></li>
+        <li><a href="<%= url('/admissions') %>"> Admissions <span class="banner__ampersand">&amp;</span> Aid </a></li>
         <div class="delimiter" aria-hiddin="true">&#10070;</div>
-        <li><a href="<%= url('/student-life') %>"> Student Life</a></li>
+        <li><a href="<%= url('/student-life') %>"> Student Life </a></li>
         <div class="delimiter" aria-hidden="true">&#10070;</div>
-        <li><a href="<%= url('/about') %>">About</a></li>
+        <li><a href="<%= url('/about') %>"> About </a></li>
       </ul>
+      
+      
       <div class="banner__border"></div>
       <div class="banner__filler--white"></div>
       <div class="banner__border"></div>
