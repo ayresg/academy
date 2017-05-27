@@ -47,6 +47,7 @@ $masthead-light: rgba($very-pale-grey-blue, 0.75);
 /* Page title header -----------------*/
 .banner__h1 {
   @include cursive;
+  background-image: linear-gradient(to right, $very-pale-grey-blue, $background-color);
   background-image: linear-gradient(to right, $banner-overlay-color, $background-color);
   padding: $padding * .75;
   color: $dark-red;
@@ -72,6 +73,7 @@ $masthead-light: rgba($very-pale-grey-blue, 0.75);
   @include small-caps;
   text-transform: lowercase;
   font-size: 4vw;
+  background-color: $very-pale-grey-blue;
   background-color: $banner-overlay-color;
   // layout
   margin-top: auto;

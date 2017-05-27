@@ -74,6 +74,7 @@ $hamburger-ratio: 0.2;
   @include cursive;
   padding: $padding * .75;
   margin: $mobile-menu-border-width 0;
+  background-color: $very-pale-grey-blue;
   background-color: $menu-overlay-color;
   
   color: $dark-red;
@@ -216,6 +217,7 @@ $hamburger-ratio: 0.2;
   margin: 0 $mobile-menu-border-width;
   
   // Colors and style
+  background-color: $very-pale-grey-blue;
   background-color: $menu-overlay-color;
   opacity: 0;
   
@@ -224,6 +226,7 @@ $hamburger-ratio: 0.2;
   transition-timing-function: linear;
 }
 .mobile-menu__item:hover {
+  background-color: lighten($very-pale-grey-blue, 0.3);
   background-color: rgba($menu-overlay-color, 0.8);
   letter-spacing: 0.1em;
 }
