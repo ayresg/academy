@@ -25,6 +25,7 @@ $masthead-light: rgba($very-pale-grey-blue, 0.75);
   // background
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: $dark-red;
   
   // force objects to have a z-index, bringing them in front of gradients
   * { position: relative; }
