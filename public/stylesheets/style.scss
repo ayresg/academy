@@ -75,9 +75,19 @@
 }
 
 /* Lists -----------------------------*/
-.unordered-list { list-style-type: circle; }
+.unordered-list { list-style-type: disc; }
 .ordered-list   { list-style-type: decimal; }
 .plain-list     { list-style-type: none; }
+.bulleted-list  {
+  list-style-type: none;
+  li:before {
+    position: relative;
+    top: -0.11em;
+    font-size: small;
+    content: "\2756";
+    padding-right: 1ch;
+  }
+}
 
 /* Elements --------------------------*/
 .image { @include max-size(100%, 100%); }
@@ -109,6 +119,7 @@
 
   ul:not(.plain-list) { 
     @extend .unordered-list;
+    @include indent;
   }
   ol:not(.plain-list) { 
     @extend .ordered-list; 

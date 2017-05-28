@@ -75,7 +75,7 @@ end
 get '/about/?' do
   @title = 'About the Academy'
   @image = 'town_fairytale.jpg'
-  erb 'The Academy sure is a place.' # TODO make actual page
+  erb :'about'
 end
 
 # STUFF FOR STUDENTS

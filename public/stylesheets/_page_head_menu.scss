@@ -22,6 +22,9 @@ $menu-overlay-color: rgba($very-pale-grey-blue, 0.55);
 $hamburger-dimension: 1.5em;
 $hamburger-ratio: 0.2;
 
+// expansion
+$expansion-duration: 0.75s;
+
 
 /*----------------------------------------------------------------------------*\
   Wrappers
@@ -150,7 +153,7 @@ $hamburger-ratio: 0.2;
 }
 /* Menu label ------------------------*/
 .mobile-menu__label {
-  transition: all 1s;
+  transition: all $expansion-duration;
   color: $very-pale-grey-blue;
   font-size: $hamburger-dimension / 2;
 }
@@ -165,7 +168,7 @@ $hamburger-ratio: 0.2;
   margin-bottom: $hamburger-ratio * $hamburger-dimension;
   // the visible part
   &:before {
-    transition: all 1s;
+    transition: all $expansion-duration;
     content: "";
     position: absolute;
     // main shape
@@ -192,12 +195,27 @@ $hamburger-ratio: 0.2;
   .mobile-menu__item {
     margin: $mobile-menu-border-width;
     margin-top: 0;
-    max-height: 9999999px;
+//    max-height: 9999999px;
+    max-height: 1.5em;
     font-size: 1.5em;
     opacity: 1;
   }
 }
 
+.mobile-menu__navicon--expanded {
+  &:before {
+    // main shape
+    background-color: $menu-overlay-color;
+    width: 100%;
+    height: $hamburger-ratio * $hamburger-dimension;
+    border-radius: 10px;
+    // the shadows
+    box-shadow: 
+      0 2 * $hamburger-ratio * $hamburger-dimension $menu-overlay-color, 
+      0 -2 * $hamburger-ratio * $hamburger-dimension $menu-overlay-color;
+  }
+}
+.mobile-menu__label--expanded { color: $menu-overlay-color; }
 
 
 /*----------------------------------------------------------------------------*\
@@ -222,10 +240,9 @@ $hamburger-ratio: 0.2;
   opacity: 0;
   
   // Transition
-  transition: all 1s, opacity 0.5s, outline 0s;
-  transition-timing-function: linear;
+  transition: all $expansion-duration, opacity $expansion-duration / 2, outline 0s;
 }
-.mobile-menu__item:hover {
+.mobile-menu__item:hover, .mobile-menu__item:focus {
   background-color: lighten($very-pale-grey-blue, 0.3);
   background-color: rgba($menu-overlay-color, 0.8);
   letter-spacing: 0.1em;
@@ -234,7 +251,15 @@ $hamburger-ratio: 0.2;
 /* Big, fancy navigation in menu -----*/
 .mobile-menu__primary { 
   @extend .mobile-menu__item;
-  color: $dark-magenta;
+  color: $almost-black;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  &:before, &:after { 
+    margin: 0 $margin * 2;
+    font-size: small;
+    content: " \2756 ";
+  }
 }
 
 /* Small navigation in menu ----------*/
