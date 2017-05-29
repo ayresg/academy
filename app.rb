@@ -31,14 +31,7 @@ get '/resources/:page' do |page|
     @image = 'tightrope_walker.jpg'
     erb :'resources/online-learning'
   end
-  
-  
-  # find it
-  if File.exist?("views/resources/#{page}.erb")
-    erb :"resources/#{page}"
-  else
-    halt 404
-  end
+  halt 404
 end
 
 # Academic departments
@@ -50,14 +43,14 @@ get '/departments/:dept' do |dept|
     dept == "riddles" ? { } : @title = "Department of " + @title
     erb :"/departments/#{@dept.page_address}"
   else
-    halt 404, "That's not a department here."
+    halt 404
   end
 end
 
 
 # ADMISSIONS
 get '/admissions/?' do
-  @title = 'Admissions & Aid'
+  @title = 'Admissions &amp; Aid'
   @image = 'hands_and_map.jpg'
   erb :'admissions'
 end

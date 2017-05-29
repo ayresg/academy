@@ -195,10 +195,13 @@ $expansion-duration: 0.75s;
   .mobile-menu__item {
     margin: $mobile-menu-border-width;
     margin-top: 0;
-//    max-height: 9999999px;
     max-height: 1.5em;
     font-size: 1.5em;
     opacity: 1;
+    &:before, &:after { 
+      font-size:  0.75em; 
+      transition: all 0s; 
+    }
   }
 }
 
@@ -229,6 +232,10 @@ $expansion-duration: 0.75s;
   text-transform: lowercase;
   text-align: center;
   font-size: 0;
+  &:before, &:after { 
+    font-size:  0; 
+    transition: all 1s;
+  }
   
   // Layout stuff
   max-height: 0px;
@@ -241,6 +248,7 @@ $expansion-duration: 0.75s;
   
   // Transition
   transition: all $expansion-duration, opacity $expansion-duration / 2, outline 0s;
+  transition-timing-function: linear;
 }
 .mobile-menu__item:hover, .mobile-menu__item:focus {
   background-color: lighten($very-pale-grey-blue, 0.3);
@@ -257,7 +265,6 @@ $expansion-duration: 0.75s;
   justify-content: center;
   &:before, &:after { 
     margin: 0 $margin * 2;
-    font-size: small;
     content: " \2756 ";
   }
 }
