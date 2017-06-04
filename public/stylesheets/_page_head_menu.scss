@@ -232,7 +232,7 @@ $expansion-duration: 0.75s;
   text-transform: lowercase;
   text-align: center;
   font-size: 0;
-  &:before, &:after { 
+  &:before, &:after {
     font-size:  0; 
     transition: all 1s;
   }

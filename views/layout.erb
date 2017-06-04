@@ -40,7 +40,7 @@
       
       
       <!-- Secondary Navbar (big)-->
-      <ul class="plain-list banner__secondary" role="navigation" aria-label="Secondary">
+      <ul class="reset-list banner__secondary" role="navigation" aria-label="Secondary">
         <li><a href="<%= url('/students') %>">Students</a></li>
         <li><a href="<%= url('/faculty-and-staff') %>">Faculty &amp; Staff</a></li>
         <li><a href="<%= url('/guild') %>">Guild</a></li>
@@ -60,7 +60,7 @@
       </a>
 
       <!-- Primary Navbar (big) -->
-      <ul class="plain-list banner__primary" role="navigation" aria-label="Primary">
+      <ul class="reset-list banner__primary" role="navigation" aria-label="Primary">
         <li><a href="<%= url('/academics') %>"> Academics </a></li>
         <div class="delimiter" aria-hiddin="true">&#10070;</div>
         <li><a href="<%= url('/admissions') %>"> Admissions <span class="banner__ampersand">&amp;</span> Aid </a></li>
@@ -71,7 +71,6 @@
       </ul>
       
       
-      <div class="banner__border"></div>
       <div class="banner__filler--white"></div>
       <div class="banner__border"></div>
       <h1  class="banner__h1"><%= @title %></h1>
@@ -101,7 +100,7 @@
     </div>
 
     <!--Small Navigation-->
-    <ul id="mobile-menu__target" class="plain-list mobile-menu" role="navigation">
+    <ul id="mobile-menu__target" class="reset-list mobile-menu" role="navigation">
       <!--Small primary navigation-->
       <a href="<%= url('/academics') %>" class="mobile-menu__primary">
         <li>Academics</li></a>

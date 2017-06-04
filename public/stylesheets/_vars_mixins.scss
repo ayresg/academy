@@ -63,8 +63,8 @@ $small-caps-letter-spacing: 1.25;
 
 
 /* Layout ----------------------------*/
-$margin: 0.5em;
-$padding: 0.5em;
+$margin: 0.5rem;
+$padding: 0.5rem;
 
 $tiny-screen-threshold: 300px;
 $small-screen-threshold: 550px;  
@@ -167,6 +167,15 @@ $big-screen-threshold: 700px;
   position: absolute;
   content: "";
 }
+
+
+/* Flex grids ------------------------*/
+//@mixin flex-grid($direction, $main-axis-rows, $cross-axis-rows) {
+//  display: flex;
+//  flex-flow: $direction wrap;
+//   // TODO: fix this travesty
+//}
+
 
 
 /* Gradients -------------------------*/

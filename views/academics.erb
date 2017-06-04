@@ -1,18 +1,31 @@
-Department list
-<!-- Iterate through list of departments -->
-<ul class="item_box pl">
-  <% Department.all.each do |dept| %>
-      <%= link_to(
-  "<li>#{dept.name}</li>", "departments/#{dept.page_address}") %>
-  <% end %>  
-</ul>
+<section>
+<h2>Department list</h2>
+  <!-- Iterate through list of departments -->
+  <ul class="box-list--column">
+    <% Department.all.each do |dept| %>
+        <%= link_to(
+    "<li>#{dept.name}</li>", "departments/#{dept.page_address}") %>
+    <% end %>  
+  </ul>
+</section>
 
-Research
-<a href="<%= url('/resources/online-learning') %>">Online learning</a>
-Special programs
-Study abroad
-Facilities
--Library
--Artificery
--Amphitheatre
--Necrobiological supercomputer
+<section>
+ <h2>Academic resources</h2>
+  <ul>
+    <li>Research</li>
+    <li>
+      <a href="<%= url('/resources/online-learning') %>">Online learning</a>
+    </li>
+    <li>Special programs</li>
+    <li>Study abroad</li>
+  </ul>
+</section>
+<section>
+  <h2>Facilities</h2>
+  <ul>
+    <li>Library</li>
+    <li>Artificery</li>
+    <li>Amphitheatre</li>
+    <li>Necrobiological supercomputer</li>
+  </ul>
+</section>

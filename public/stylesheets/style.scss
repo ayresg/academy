@@ -75,9 +75,9 @@
 }
 
 /* Lists -----------------------------*/
-.unordered-list { list-style-type: disc; }
-.ordered-list   { list-style-type: decimal; }
-.plain-list     { list-style-type: none; }
+.unordered-list { list-style-type: none; }
+.ordered-list   { @include indent; list-style-type: decimal; }
+.reset-list     { list-style-type: none; }
 .bulleted-list  {
   list-style-type: none;
   li:before {
@@ -91,14 +91,15 @@
 
 /* Elements --------------------------*/
 .image { @include max-size(100%, 100%); }
-.p, .section { /* empty */ }
-.p, .unordered-list, .ordered-list {
-  @include margin-padding;
-  margin-top: none;
-  padding-top: none;
+.section { /* empty */ }
+.p, .unordered-list, .ordered-list, .figure {
+  @include margin-padding-percent(.5);
 }
-
-
+.figcaption {
+  font-size: smaller;
+  text-align: justify;
+  margin-top: $margin / 2; 
+}
 
 /*------------------------------------*\
   #TYPOGRAPHY WRAPPER CLASS
@@ -117,23 +118,19 @@
   h5, .h5 { @extend .h5; }
   h6, .h6 { @extend .h6; }
 
-  ul:not(.plain-list) { 
-    @extend .unordered-list;
-    @include indent;
-  }
-  ol:not(.plain-list) { 
-    @extend .ordered-list; 
-    @include indent; 
-  }
+  ul:not(.reset-list) { @extend .unordered-list; }
+  ol:not(.reset-list) { @extend .ordered-list;   }
 
   a { @extend .link; }
   
-  pre, code { @extend .fixed; }
-  cite      { @extend .italic; }
-  img       { @extend .image; }
-  main      { @extend .main; }
-  p         { @extend .p; }
-  section   { @extend .section; }
+  pre, code  { @extend .fixed; }
+  cite       { @extend .italic; }
+  img        { @extend .image; }
+  main       { @extend .main; }
+  p          { @extend .p; }
+  section    { @extend .section; }
+  figure     { @extend .figure; }
+  figcaption { @extend .figcaption; }
 }
 
 /*------------------------------------*\

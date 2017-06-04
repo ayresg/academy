@@ -17,7 +17,7 @@ end
 get '/academics/?' do
   @title = 'Academics at ASF'
   @image = 'witches_three.jpg'
-  erb :'academics'
+  erb :academics
 end
 
 # Academic resources
@@ -40,7 +40,11 @@ get '/departments/:dept' do |dept|
   if @dept
     @image = @dept.header_image_name
     @title = @dept.name
-    dept == "riddles" ? { } : @title = "Department of " + @title
+    if dept == "riddles"
+      @title = "Is this the Department of " + @title
+    else
+      @title = "Department of " + @title
+    end
     erb :"/departments/#{@dept.page_address}"
   else
     halt 404
@@ -52,7 +56,7 @@ end
 get '/admissions/?' do
   @title = 'Admissions &amp; Aid'
   @image = 'hands_and_map.jpg'
-  erb :'admissions'
+  erb :admissions
 end
 
 
@@ -60,7 +64,7 @@ end
 get '/student-life/?', '/studentlife/?', '/student_life/?' do
   @title = 'Life at ASF'
   @image = 'laughing_clifftop_guys.jpg'
-  erb :'student_life'
+  erb :student_life
 end
 
 
@@ -68,10 +72,16 @@ end
 get '/about/?' do
   @title = 'About the Academy'
   @image = 'town_fairytale.jpg'
-  erb :'about'
+  erb :about
 end
 
 # STUFF FOR STUDENTS
+get '/students/?' do
+  @title = 'Student Portal'
+  
+  erb :things_for_students
+end
+
 # STUFF FOR FACULTY & STAFF
 # GUILD
 # VISITORS
@@ -80,6 +90,8 @@ get '/visitors/?' do
   @image = 'town_rustic_colors.jpg'
   erb :visitors
 end
+
+
 
 # TESTING AND COURSES
 get '/course_testing/?' do
